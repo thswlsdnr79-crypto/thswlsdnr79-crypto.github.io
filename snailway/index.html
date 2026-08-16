@@ -1,101 +1,181 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Snailway — Your walks, drawn as a picture</title>
 <style>
-:root{
-  --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
-  --card:#fafafa; --accent:#0a84ff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#111113; --fg:#ececf1; --muted:#9a9aa2; --line:#2c2c30;
-    --card:#1a1a1d; --accent:#4da3ff;
-  }
-}
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113;--fg:#ececf1;--muted:#9a9aa2;--line:#2c2c30;--card:#1a1a1d;--accent:#4da3ff}}
 *{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
-              "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
-}
-.wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
-h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
-   border-top:1px solid var(--line); letter-spacing:-0.01em}
-h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
-h3{font-size:1rem; margin:26px 0 4px}
-.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
-.meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",
+              "Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line);
+   letter-spacing:-0.01em;scroll-margin-top:16px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:28px}
+h3{font-size:.95rem;margin:24px 0 6px;color:var(--muted);font-weight:600}
+.tag{color:var(--muted);font-size:1.02rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 8px}
 .meta a{color:var(--muted)}
-hr{border:0; border-top:1px solid var(--line); margin:32px 0}
-ol{padding-left:1.35em; margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+ol{padding-left:1.35em;margin:0}
 li{margin:12px 0}
-p{margin:16px 0}
+p{margin:14px 0}
 strong{font-weight:600}
-a{color:var(--accent); text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
-      padding:16px 18px; margin:20px 0}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0}
 .lead p{margin:0}
-.back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
-.applist{list-style:none; padding:0; margin:28px 0 0}
+.back{display:inline-block;margin-bottom:28px;font-size:.9rem;color:var(--muted)}
+.applist{list-style:none;padding:0;margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
-           border-radius:12px; background:var(--card); color:inherit}
-.applist a:hover{border-color:var(--accent); text-decoration:none}
-.applist .name{font-weight:600; font-size:1.05rem}
-.applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
-.feat{list-style:none; padding:0; margin:20px 0 0}
-.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
-         padding:16px 18px; margin:0 0 10px}
-.feat .t{font-weight:600; display:block; margin-bottom:2px}
-.feat .d{color:var(--muted); font-size:.94rem}
-.langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
-         border-radius:999px; background:var(--card); color:var(--muted);
-         font-size:.85rem; white-space:nowrap}
-.langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-h2{scroll-margin-top:16px}
-.btnrow{margin:26px 0 0}
-.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
-          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
-.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
-       color:var(--muted); font-size:.85rem}
+.applist a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;
+           background:var(--card);color:inherit}
+.applist a:hover{border-color:var(--accent);text-decoration:none}
+.applist .name{font-weight:600;font-size:1.05rem}
+.applist .desc{color:var(--muted);font-size:.9rem;margin-top:2px}
+.feat{list-style:none;padding:0;margin:14px 0 0}
+.feat li{border:1px solid var(--line);border-radius:12px;background:var(--card);
+         padding:14px 16px;margin:0 0 8px}
+.feat .t{font-weight:600;display:block;margin-bottom:2px}
+.feat .d{color:var(--muted);font-size:.94rem}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btnrow{margin:18px 0 0}
+.btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
+          background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
+.btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+       color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← 전체 앱 / All apps</a>
+<a class="back" href="../">← All apps</a>
 <h1>Snailway</h1>
-<p class="tag">걸은 길이 그림이 되는 산책 기록</p>
 <p class="meta">Your walks, drawn as a picture · iOS</p>
-
-<h2>소개 / About</h2>
-<p>산책한 경로가 캔버스 위에 선으로 쌓입니다. 자주 걸은 길일수록 진하게 남아, 시간이 지나면 내 동네가 한 장의 그림이 됩니다. 모든 기록은 기기 안에만 저장됩니다.</p>
-<p>Your walking routes accumulate on a canvas. Paths you walk often grow brighter, and over time your neighborhood becomes a single drawing. All tracks stay on your device.</p>
-
-<h2>주요 기능 / Features</h2>
-<ul class="feat">
+<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
+<h2 id="lang-0" lang="en">English</h2>
+<p class="tag" lang="en">Your walks, drawn as a picture</p>
+<h3>About</h3>
+<p lang="en">Your walking routes accumulate as lines on a canvas. Paths you walk often grow brighter, and over time your neighborhood becomes a single drawing. All tracks stay on your device.</p>
+<h3>Features</h3>
+<ul class="feat" lang="en">
+  <li><span class="t">Cumulative canvas</span><span class="d">Lines deepen the more you walk, completing a picture.</span></li>
+  <li><span class="t">Visit history</span><span class="d">Tap a point to see when you passed through it.</span></li>
+  <li><span class="t">Statistics</span><span class="d">Distance, time and elevation graphs.</span></li>
+  <li><span class="t">Share your route</span><span class="d">Export the finished drawing as an image.</span></li>
+</ul>
+<h3>Privacy</h3>
+<p lang="en">This app operates no developer server. See the privacy policy below for details.</p>
+<div class="btnrow"><a href="privacy/#lang-0">Privacy Policy</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-1" lang="ko">한국어</h2>
+<p class="tag" lang="ko">걸은 길이 그림이 되는 산책 기록</p>
+<h3>소개</h3>
+<p lang="ko">산책한 경로가 캔버스 위에 선으로 쌓입니다. 자주 걸은 길일수록 진하게 남아, 시간이 지나면 내 동네가 한 장의 그림이 됩니다. 모든 기록은 기기 안에만 저장됩니다.</p>
+<h3>주요 기능</h3>
+<ul class="feat" lang="ko">
   <li><span class="t">누적 캔버스</span><span class="d">걸을수록 선이 진해지고 그림이 완성됩니다.</span></li>
   <li><span class="t">방문 이력</span><span class="d">지점을 누르면 그곳을 언제 지났는지 볼 수 있습니다.</span></li>
   <li><span class="t">통계</span><span class="d">거리·시간·고도 그래프.</span></li>
   <li><span class="t">경로 공유</span><span class="d">완성된 그림을 이미지로 내보냅니다.</span></li>
 </ul>
-
-<h2>개인정보 / Privacy</h2>
-<p>Snailway은(는) 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
-<div class="btnrow">
-  <a href="privacy/">개인정보 처리방침 / Privacy Policy</a>
-  <a href="mailto:supersons.apps@gmail.com">문의 / Contact</a>
-</div>
-
+<h3>개인정보</h3>
+<p lang="ko">이 앱은 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
+<div class="btnrow"><a href="privacy/#lang-1">개인정보 처리방침</a><a href="mailto:supersons.apps@gmail.com">문의</a></div>
+<h2 id="lang-2" lang="ja">日本語</h2>
+<p class="tag" lang="ja">歩いた道が絵になる散歩記録</p>
+<h3>概要</h3>
+<p lang="ja">散歩したルートがキャンバスに線として積み重なります。よく歩いた道ほど濃く残り、時間が経つと自分の街が一枚の絵になります。すべての記録は端末内にのみ保存されます。</p>
+<h3>主な機能</h3>
+<ul class="feat" lang="ja">
+  <li><span class="t">累積キャンバス</span><span class="d">歩くほど線が濃くなり、絵が完成していきます。</span></li>
+  <li><span class="t">訪問履歴</span><span class="d">地点をタップすると、いつそこを通ったか分かります。</span></li>
+  <li><span class="t">統計</span><span class="d">距離・時間・標高のグラフ。</span></li>
+  <li><span class="t">ルート共有</span><span class="d">できあがった絵を画像として書き出せます。</span></li>
+</ul>
+<h3>プライバシー</h3>
+<p lang="ja">本アプリは開発者サーバーを運用していません。詳しくは下記をご覧ください。</p>
+<div class="btnrow"><a href="privacy/#lang-2">プライバシーポリシー</a><a href="mailto:supersons.apps@gmail.com">お問い合わせ</a></div>
+<h2 id="lang-3" lang="zh-Hant">繁體中文</h2>
+<p class="tag" lang="zh-Hant">把走過的路變成一幅畫的散步紀錄</p>
+<h3>簡介</h3>
+<p lang="zh-Hant">散步的路線會在畫布上一層層疊成線條。走得越頻繁的路越明顯，久而久之，您的街區就成了一幅畫。所有紀錄僅儲存在您的裝置上。</p>
+<h3>主要功能</h3>
+<ul class="feat" lang="zh-Hant">
+  <li><span class="t">累積畫布</span><span class="d">越常走線條越濃，畫作逐漸完成。</span></li>
+  <li><span class="t">造訪紀錄</span><span class="d">點一下地點，就能看到您何時經過。</span></li>
+  <li><span class="t">統計</span><span class="d">距離、時間與高度圖表。</span></li>
+  <li><span class="t">分享路線</span><span class="d">把完成的畫作匯出成圖片。</span></li>
+</ul>
+<h3>隱私權</h3>
+<p lang="zh-Hant">本應用程式未運作任何開發者伺服器。詳情請參閱下方說明。</p>
+<div class="btnrow"><a href="privacy/#lang-3">隱私權政策</a><a href="mailto:supersons.apps@gmail.com">聯絡我們</a></div>
+<h2 id="lang-4" lang="es">Español</h2>
+<p class="tag" lang="es">Tus paseos, dibujados como un cuadro</p>
+<h3>Acerca de</h3>
+<p lang="es">Tus rutas se acumulan como líneas sobre un lienzo. Los caminos que más recorres se vuelven más intensos y, con el tiempo, tu barrio se convierte en un dibujo. Todos los recorridos permanecen en su dispositivo.</p>
+<h3>Funciones</h3>
+<ul class="feat" lang="es">
+  <li><span class="t">Lienzo acumulativo</span><span class="d">Las líneas se intensifican cuanto más caminas.</span></li>
+  <li><span class="t">Historial de visitas</span><span class="d">Toca un punto para ver cuándo pasaste por allí.</span></li>
+  <li><span class="t">Estadísticas</span><span class="d">Gráficas de distancia, tiempo y altitud.</span></li>
+  <li><span class="t">Comparte tu ruta</span><span class="d">Exporta el dibujo terminado como imagen.</span></li>
+</ul>
+<h3>Privacidad</h3>
+<p lang="es">Esta aplicación no opera ningún servidor propio. Consulte la política de privacidad.</p>
+<div class="btnrow"><a href="privacy/#lang-4">Política de privacidad</a><a href="mailto:supersons.apps@gmail.com">Contacto</a></div>
+<h2 id="lang-5" lang="fr">Français</h2>
+<p class="tag" lang="fr">Vos promenades, dessinées comme un tableau</p>
+<h3>À propos</h3>
+<p lang="fr">Vos parcours s&#x27;accumulent en lignes sur une toile. Les chemins les plus empruntés deviennent plus vifs et, avec le temps, votre quartier devient un dessin. Tous les trajets restent sur votre appareil.</p>
+<h3>Fonctionnalités</h3>
+<ul class="feat" lang="fr">
+  <li><span class="t">Toile cumulative</span><span class="d">Les lignes s&#x27;intensifient à mesure que vous marchez.</span></li>
+  <li><span class="t">Historique des passages</span><span class="d">Touchez un point pour voir quand vous y êtes passé.</span></li>
+  <li><span class="t">Statistiques</span><span class="d">Graphiques de distance, de durée et d&#x27;altitude.</span></li>
+  <li><span class="t">Partagez votre parcours</span><span class="d">Exportez le dessin terminé en image.</span></li>
+</ul>
+<h3>Confidentialité</h3>
+<p lang="fr">Cette application n&#x27;exploite aucun serveur du développeur. Voir la politique ci-dessous.</p>
+<div class="btnrow"><a href="privacy/#lang-5">Politique de confidentialité</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-6" lang="de">Deutsch</h2>
+<p class="tag" lang="de">Ihre Spaziergänge, gezeichnet als Bild</p>
+<h3>Über die App</h3>
+<p lang="de">Ihre Routen sammeln sich als Linien auf einer Leinwand. Häufig gegangene Wege werden kräftiger, und mit der Zeit wird Ihr Viertel zu einem Bild. Alle Strecken bleiben auf Ihrem Gerät.</p>
+<h3>Funktionen</h3>
+<ul class="feat" lang="de">
+  <li><span class="t">Kumulative Leinwand</span><span class="d">Je öfter Sie gehen, desto kräftiger werden die Linien.</span></li>
+  <li><span class="t">Besuchsverlauf</span><span class="d">Tippen Sie auf einen Punkt, um zu sehen, wann Sie dort waren.</span></li>
+  <li><span class="t">Statistik</span><span class="d">Diagramme zu Distanz, Zeit und Höhe.</span></li>
+  <li><span class="t">Route teilen</span><span class="d">Exportieren Sie das fertige Bild.</span></li>
+</ul>
+<h3>Datenschutz</h3>
+<p lang="de">Diese App betreibt keinen Entwickler-Server. Einzelheiten in der Datenschutzrichtlinie.</p>
+<div class="btnrow"><a href="privacy/#lang-6">Datenschutzrichtlinie</a><a href="mailto:supersons.apps@gmail.com">Kontakt</a></div>
+<h2 id="lang-7" lang="hi">हिन्दी</h2>
+<p class="tag" lang="hi">चली गई राहें जो एक चित्र बन जाती हैं</p>
+<h3>परिचय</h3>
+<p lang="hi">आपके टहलने के मार्ग कैनवास पर रेखाओं की तरह जमा होते हैं। जिन रास्तों पर आप अधिक चलते हैं वे गहरे होते जाते हैं और समय के साथ आपका मोहल्ला एक चित्र बन जाता है। सभी रिकॉर्ड केवल आपके डिवाइस पर रहते हैं।</p>
+<h3>मुख्य विशेषताएँ</h3>
+<ul class="feat" lang="hi">
+  <li><span class="t">संचयी कैनवास</span><span class="d">जितना चलेंगे, रेखाएँ उतनी गहरी होंगी और चित्र पूरा होगा।</span></li>
+  <li><span class="t">भ्रमण इतिहास</span><span class="d">किसी बिंदु पर टैप करें और देखें आप वहाँ से कब गुज़रे।</span></li>
+  <li><span class="t">आँकड़े</span><span class="d">दूरी, समय और ऊँचाई के ग्राफ़।</span></li>
+  <li><span class="t">मार्ग साझा करें</span><span class="d">पूरा हुआ चित्र छवि के रूप में निर्यात करें।</span></li>
+</ul>
+<h3>गोपनीयता</h3>
+<p lang="hi">यह ऐप कोई डेवलपर सर्वर नहीं चलाता। विवरण के लिए नीचे गोपनीयता नीति देखें।</p>
+<div class="btnrow"><a href="privacy/#lang-7">गोपनीयता नीति</a><a href="mailto:supersons.apps@gmail.com">संपर्क</a></div>
 <footer>
-  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>

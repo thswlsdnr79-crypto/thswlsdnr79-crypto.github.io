@@ -1,100 +1,173 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OctoPick — Draws, orders and team splits</title>
 <style>
-:root{
-  --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
-  --card:#fafafa; --accent:#0a84ff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#111113; --fg:#ececf1; --muted:#9a9aa2; --line:#2c2c30;
-    --card:#1a1a1d; --accent:#4da3ff;
-  }
-}
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113;--fg:#ececf1;--muted:#9a9aa2;--line:#2c2c30;--card:#1a1a1d;--accent:#4da3ff}}
 *{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
-              "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
-}
-.wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
-h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
-   border-top:1px solid var(--line); letter-spacing:-0.01em}
-h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
-h3{font-size:1rem; margin:26px 0 4px}
-.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
-.meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",
+              "Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line);
+   letter-spacing:-0.01em;scroll-margin-top:16px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:28px}
+h3{font-size:.95rem;margin:24px 0 6px;color:var(--muted);font-weight:600}
+.tag{color:var(--muted);font-size:1.02rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 8px}
 .meta a{color:var(--muted)}
-hr{border:0; border-top:1px solid var(--line); margin:32px 0}
-ol{padding-left:1.35em; margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+ol{padding-left:1.35em;margin:0}
 li{margin:12px 0}
-p{margin:16px 0}
+p{margin:14px 0}
 strong{font-weight:600}
-a{color:var(--accent); text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
-      padding:16px 18px; margin:20px 0}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0}
 .lead p{margin:0}
-.back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
-.applist{list-style:none; padding:0; margin:28px 0 0}
+.back{display:inline-block;margin-bottom:28px;font-size:.9rem;color:var(--muted)}
+.applist{list-style:none;padding:0;margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
-           border-radius:12px; background:var(--card); color:inherit}
-.applist a:hover{border-color:var(--accent); text-decoration:none}
-.applist .name{font-weight:600; font-size:1.05rem}
-.applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
-.feat{list-style:none; padding:0; margin:20px 0 0}
-.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
-         padding:16px 18px; margin:0 0 10px}
-.feat .t{font-weight:600; display:block; margin-bottom:2px}
-.feat .d{color:var(--muted); font-size:.94rem}
-.langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
-         border-radius:999px; background:var(--card); color:var(--muted);
-         font-size:.85rem; white-space:nowrap}
-.langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-h2{scroll-margin-top:16px}
-.btnrow{margin:26px 0 0}
-.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
-          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
-.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
-       color:var(--muted); font-size:.85rem}
+.applist a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;
+           background:var(--card);color:inherit}
+.applist a:hover{border-color:var(--accent);text-decoration:none}
+.applist .name{font-weight:600;font-size:1.05rem}
+.applist .desc{color:var(--muted);font-size:.9rem;margin-top:2px}
+.feat{list-style:none;padding:0;margin:14px 0 0}
+.feat li{border:1px solid var(--line);border-radius:12px;background:var(--card);
+         padding:14px 16px;margin:0 0 8px}
+.feat .t{font-weight:600;display:block;margin-bottom:2px}
+.feat .d{color:var(--muted);font-size:.94rem}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btnrow{margin:18px 0 0}
+.btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
+          background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
+.btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+       color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← 전체 앱 / All apps</a>
+<a class="back" href="../">← All apps</a>
 <h1>OctoPick</h1>
-<p class="tag">뽑기·순서·팀 나누기 도구</p>
 <p class="meta">Draws, orders and team splits · iOS</p>
-
-<h2>소개 / About</h2>
-<p>이름을 넣고 버튼만 누르면 뽑기·순서 정하기·팀 나누기가 끝납니다. 자주 쓰는 명단은 프리셋으로 저장해 두고 다시 쓸 수 있습니다.</p>
-<p>Enter names and tap once for a draw, an order, or team split. Save frequently used rosters as presets.</p>
-
-<h2>주요 기능 / Features</h2>
-<ul class="feat">
+<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
+<h2 id="lang-0" lang="en">English</h2>
+<p class="tag" lang="en">Draws, orders and team splits</p>
+<h3>About</h3>
+<p lang="en">Enter names and tap once for a random draw, a running order, or a team split. Save frequently used rosters as presets and reuse them.</p>
+<h3>Features</h3>
+<ul class="feat" lang="en">
+  <li><span class="t">Three modes</span><span class="d">Random draw · running order · team split.</span></li>
+  <li><span class="t">Presets</span><span class="d">Save rosters you use often and reuse them.</span></li>
+  <li><span class="t">Share results</span><span class="d">Share the outcome as an image.</span></li>
+</ul>
+<h3>Privacy</h3>
+<p lang="en">This app operates no developer server. See the privacy policy below for details.</p>
+<div class="btnrow"><a href="privacy/#lang-0">Privacy Policy</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-1" lang="ko">한국어</h2>
+<p class="tag" lang="ko">뽑기·순서·팀 나누기 도구</p>
+<h3>소개</h3>
+<p lang="ko">이름을 넣고 버튼만 누르면 뽑기·순서 정하기·팀 나누기가 끝납니다. 자주 쓰는 명단은 프리셋으로 저장해 두고 다시 쓸 수 있습니다.</p>
+<h3>주요 기능</h3>
+<ul class="feat" lang="ko">
   <li><span class="t">세 가지 모드</span><span class="d">뽑기 · 순서 정하기 · 팀 나누기.</span></li>
   <li><span class="t">프리셋</span><span class="d">자주 쓰는 명단을 저장해 재사용.</span></li>
   <li><span class="t">결과 공유</span><span class="d">뽑은 결과를 이미지로 공유.</span></li>
 </ul>
-
-<h2>개인정보 / Privacy</h2>
-<p>OctoPick은(는) 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
-<div class="btnrow">
-  <a href="privacy/">개인정보 처리방침 / Privacy Policy</a>
-  <a href="mailto:supersons.apps@gmail.com">문의 / Contact</a>
-</div>
-
+<h3>개인정보</h3>
+<p lang="ko">이 앱은 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
+<div class="btnrow"><a href="privacy/#lang-1">개인정보 처리방침</a><a href="mailto:supersons.apps@gmail.com">문의</a></div>
+<h2 id="lang-2" lang="ja">日本語</h2>
+<p class="tag" lang="ja">抽選・順番決め・チーム分けツール</p>
+<h3>概要</h3>
+<p lang="ja">名前を入れてボタンを押すだけで、抽選・順番決め・チーム分けが完了します。よく使う名簿はプリセットとして保存し、再利用できます。</p>
+<h3>主な機能</h3>
+<ul class="feat" lang="ja">
+  <li><span class="t">3つのモード</span><span class="d">抽選 ・ 順番決め ・ チーム分け。</span></li>
+  <li><span class="t">プリセット</span><span class="d">よく使う名簿を保存して再利用。</span></li>
+  <li><span class="t">結果を共有</span><span class="d">結果を画像として共有。</span></li>
+</ul>
+<h3>プライバシー</h3>
+<p lang="ja">本アプリは開発者サーバーを運用していません。詳しくは下記をご覧ください。</p>
+<div class="btnrow"><a href="privacy/#lang-2">プライバシーポリシー</a><a href="mailto:supersons.apps@gmail.com">お問い合わせ</a></div>
+<h2 id="lang-3" lang="zh-Hant">繁體中文</h2>
+<p class="tag" lang="zh-Hant">抽籤、排序與分組工具</p>
+<h3>簡介</h3>
+<p lang="zh-Hant">輸入名字後按一下，就能完成抽籤、決定順序或分組。常用名單可存成預設組合重複使用。</p>
+<h3>主要功能</h3>
+<ul class="feat" lang="zh-Hant">
+  <li><span class="t">三種模式</span><span class="d">抽籤 ・ 決定順序 ・ 分組。</span></li>
+  <li><span class="t">預設組合</span><span class="d">把常用名單存起來重複使用。</span></li>
+  <li><span class="t">分享結果</span><span class="d">把結果以圖片分享。</span></li>
+</ul>
+<h3>隱私權</h3>
+<p lang="zh-Hant">本應用程式未運作任何開發者伺服器。詳情請參閱下方說明。</p>
+<div class="btnrow"><a href="privacy/#lang-3">隱私權政策</a><a href="mailto:supersons.apps@gmail.com">聯絡我們</a></div>
+<h2 id="lang-4" lang="es">Español</h2>
+<p class="tag" lang="es">Sorteos, turnos y reparto de equipos</p>
+<h3>Acerca de</h3>
+<p lang="es">Introduce los nombres y pulsa una vez para un sorteo, un orden de turnos o un reparto de equipos. Guarda las listas que más usas como ajustes preestablecidos.</p>
+<h3>Funciones</h3>
+<ul class="feat" lang="es">
+  <li><span class="t">Tres modos</span><span class="d">Sorteo · orden de turnos · reparto de equipos.</span></li>
+  <li><span class="t">Listas guardadas</span><span class="d">Guarda las listas frecuentes y reutilízalas.</span></li>
+  <li><span class="t">Comparte resultados</span><span class="d">Comparte el resultado como imagen.</span></li>
+</ul>
+<h3>Privacidad</h3>
+<p lang="es">Esta aplicación no opera ningún servidor propio. Consulte la política de privacidad.</p>
+<div class="btnrow"><a href="privacy/#lang-4">Política de privacidad</a><a href="mailto:supersons.apps@gmail.com">Contacto</a></div>
+<h2 id="lang-5" lang="fr">Français</h2>
+<p class="tag" lang="fr">Tirages, ordres de passage et répartition d&#x27;équipes</p>
+<h3>À propos</h3>
+<p lang="fr">Saisissez les noms et appuyez une fois pour un tirage, un ordre de passage ou une répartition d&#x27;équipes. Enregistrez vos listes fréquentes en préréglages.</p>
+<h3>Fonctionnalités</h3>
+<ul class="feat" lang="fr">
+  <li><span class="t">Trois modes</span><span class="d">Tirage · ordre de passage · répartition d&#x27;équipes.</span></li>
+  <li><span class="t">Préréglages</span><span class="d">Enregistrez les listes utilisées souvent et réutilisez-les.</span></li>
+  <li><span class="t">Partagez les résultats</span><span class="d">Partagez le résultat sous forme d&#x27;image.</span></li>
+</ul>
+<h3>Confidentialité</h3>
+<p lang="fr">Cette application n&#x27;exploite aucun serveur du développeur. Voir la politique ci-dessous.</p>
+<div class="btnrow"><a href="privacy/#lang-5">Politique de confidentialité</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-6" lang="de">Deutsch</h2>
+<p class="tag" lang="de">Auslosungen, Reihenfolgen und Teameinteilung</p>
+<h3>Über die App</h3>
+<p lang="de">Namen eingeben, einmal tippen – fertig sind Auslosung, Reihenfolge oder Teameinteilung. Häufig genutzte Listen lassen sich als Voreinstellung speichern.</p>
+<h3>Funktionen</h3>
+<ul class="feat" lang="de">
+  <li><span class="t">Drei Modi</span><span class="d">Auslosung · Reihenfolge · Teameinteilung.</span></li>
+  <li><span class="t">Voreinstellungen</span><span class="d">Häufig genutzte Listen speichern und wiederverwenden.</span></li>
+  <li><span class="t">Ergebnisse teilen</span><span class="d">Teilen Sie das Ergebnis als Bild.</span></li>
+</ul>
+<h3>Datenschutz</h3>
+<p lang="de">Diese App betreibt keinen Entwickler-Server. Einzelheiten in der Datenschutzrichtlinie.</p>
+<div class="btnrow"><a href="privacy/#lang-6">Datenschutzrichtlinie</a><a href="mailto:supersons.apps@gmail.com">Kontakt</a></div>
+<h2 id="lang-7" lang="hi">हिन्दी</h2>
+<p class="tag" lang="hi">ड्रॉ, क्रम और टीम बँटवारे का उपकरण</p>
+<h3>परिचय</h3>
+<p lang="hi">नाम डालें और एक टैप से ड्रॉ, क्रम या टीम बँटवारा पूरा करें। अक्सर उपयोग होने वाली सूचियाँ प्रीसेट के रूप में सहेजें।</p>
+<h3>मुख्य विशेषताएँ</h3>
+<ul class="feat" lang="hi">
+  <li><span class="t">तीन मोड</span><span class="d">ड्रॉ · क्रम तय करना · टीम बँटवारा।</span></li>
+  <li><span class="t">प्रीसेट</span><span class="d">बार-बार उपयोग होने वाली सूचियाँ सहेजें और दोबारा उपयोग करें।</span></li>
+  <li><span class="t">परिणाम साझा करें</span><span class="d">परिणाम को छवि के रूप में साझा करें।</span></li>
+</ul>
+<h3>गोपनीयता</h3>
+<p lang="hi">यह ऐप कोई डेवलपर सर्वर नहीं चलाता। विवरण के लिए नीचे गोपनीयता नीति देखें।</p>
+<div class="btnrow"><a href="privacy/#lang-7">गोपनीयता नीति</a><a href="mailto:supersons.apps@gmail.com">संपर्क</a></div>
 <footer>
-  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>

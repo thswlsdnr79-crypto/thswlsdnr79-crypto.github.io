@@ -1,71 +1,59 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OctoPick Privacy Policy</title>
 <style>
-:root{
-  --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
-  --card:#fafafa; --accent:#0a84ff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#111113; --fg:#ececf1; --muted:#9a9aa2; --line:#2c2c30;
-    --card:#1a1a1d; --accent:#4da3ff;
-  }
-}
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113;--fg:#ececf1;--muted:#9a9aa2;--line:#2c2c30;--card:#1a1a1d;--accent:#4da3ff}}
 *{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
-              "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
-}
-.wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
-h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
-   border-top:1px solid var(--line); letter-spacing:-0.01em}
-h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
-h3{font-size:1rem; margin:26px 0 4px}
-.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
-.meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",
+              "Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line);
+   letter-spacing:-0.01em;scroll-margin-top:16px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:28px}
+h3{font-size:.95rem;margin:24px 0 6px;color:var(--muted);font-weight:600}
+.tag{color:var(--muted);font-size:1.02rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 8px}
 .meta a{color:var(--muted)}
-hr{border:0; border-top:1px solid var(--line); margin:32px 0}
-ol{padding-left:1.35em; margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+ol{padding-left:1.35em;margin:0}
 li{margin:12px 0}
-p{margin:16px 0}
+p{margin:14px 0}
 strong{font-weight:600}
-a{color:var(--accent); text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
-      padding:16px 18px; margin:20px 0}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0}
 .lead p{margin:0}
-.back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
-.applist{list-style:none; padding:0; margin:28px 0 0}
+.back{display:inline-block;margin-bottom:28px;font-size:.9rem;color:var(--muted)}
+.applist{list-style:none;padding:0;margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
-           border-radius:12px; background:var(--card); color:inherit}
-.applist a:hover{border-color:var(--accent); text-decoration:none}
-.applist .name{font-weight:600; font-size:1.05rem}
-.applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
-.feat{list-style:none; padding:0; margin:20px 0 0}
-.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
-         padding:16px 18px; margin:0 0 10px}
-.feat .t{font-weight:600; display:block; margin-bottom:2px}
-.feat .d{color:var(--muted); font-size:.94rem}
-.langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
-         border-radius:999px; background:var(--card); color:var(--muted);
-         font-size:.85rem; white-space:nowrap}
-.langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-h2{scroll-margin-top:16px}
-.btnrow{margin:26px 0 0}
-.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
-          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
-.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
-       color:var(--muted); font-size:.85rem}
+.applist a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;
+           background:var(--card);color:inherit}
+.applist a:hover{border-color:var(--accent);text-decoration:none}
+.applist .name{font-weight:600;font-size:1.05rem}
+.applist .desc{color:var(--muted);font-size:.9rem;margin-top:2px}
+.feat{list-style:none;padding:0;margin:14px 0 0}
+.feat li{border:1px solid var(--line);border-radius:12px;background:var(--card);
+         padding:14px 16px;margin:0 0 8px}
+.feat .t{font-weight:600;display:block;margin-bottom:2px}
+.feat .d{color:var(--muted);font-size:.94rem}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btnrow{margin:18px 0 0}
+.btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
+          background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
+.btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+       color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -148,7 +136,7 @@ footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
 <li>इस नीति में कोई भी बदलाव इसी पृष्ठ पर सूचित किया जाएगा।</li>
 </ol>
 <footer>
-  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>

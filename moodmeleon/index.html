@@ -1,121 +1,253 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MoodMeleon — Track your daily mood as colors</title>
 <style>
-:root{
-  --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
-  --card:#fafafa; --accent:#0a84ff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#111113; --fg:#ececf1; --muted:#9a9aa2; --line:#2c2c30;
-    --card:#1a1a1d; --accent:#4da3ff;
-  }
-}
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113;--fg:#ececf1;--muted:#9a9aa2;--line:#2c2c30;--card:#1a1a1d;--accent:#4da3ff}}
 *{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--fg);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
-              "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
-}
-.wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
-h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
-   border-top:1px solid var(--line); letter-spacing:-0.01em}
-h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
-h3{font-size:1rem; margin:26px 0 4px}
-.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
-.meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",
+              "Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line);
+   letter-spacing:-0.01em;scroll-margin-top:16px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:28px}
+h3{font-size:.95rem;margin:24px 0 6px;color:var(--muted);font-weight:600}
+.tag{color:var(--muted);font-size:1.02rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 8px}
 .meta a{color:var(--muted)}
-hr{border:0; border-top:1px solid var(--line); margin:32px 0}
-ol{padding-left:1.35em; margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+ol{padding-left:1.35em;margin:0}
 li{margin:12px 0}
-p{margin:16px 0}
+p{margin:14px 0}
 strong{font-weight:600}
-a{color:var(--accent); text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
-      padding:16px 18px; margin:20px 0}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0}
 .lead p{margin:0}
-.back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
-.applist{list-style:none; padding:0; margin:28px 0 0}
+.back{display:inline-block;margin-bottom:28px;font-size:.9rem;color:var(--muted)}
+.applist{list-style:none;padding:0;margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
-           border-radius:12px; background:var(--card); color:inherit}
-.applist a:hover{border-color:var(--accent); text-decoration:none}
-.applist .name{font-weight:600; font-size:1.05rem}
-.applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
-.feat{list-style:none; padding:0; margin:20px 0 0}
-.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
-         padding:16px 18px; margin:0 0 10px}
-.feat .t{font-weight:600; display:block; margin-bottom:2px}
-.feat .d{color:var(--muted); font-size:.94rem}
-.langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
-         border-radius:999px; background:var(--card); color:var(--muted);
-         font-size:.85rem; white-space:nowrap}
-.langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-h2{scroll-margin-top:16px}
-.btnrow{margin:26px 0 0}
-.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
-          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
-.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
-footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
-       color:var(--muted); font-size:.85rem}
+.applist a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;
+           background:var(--card);color:inherit}
+.applist a:hover{border-color:var(--accent);text-decoration:none}
+.applist .name{font-weight:600;font-size:1.05rem}
+.applist .desc{color:var(--muted);font-size:.9rem;margin-top:2px}
+.feat{list-style:none;padding:0;margin:14px 0 0}
+.feat li{border:1px solid var(--line);border-radius:12px;background:var(--card);
+         padding:14px 16px;margin:0 0 8px}
+.feat .t{font-weight:600;display:block;margin-bottom:2px}
+.feat .d{color:var(--muted);font-size:.94rem}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.btnrow{margin:18px 0 0}
+.btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
+          background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
+.btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+       color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← 전체 앱 / All apps</a>
+<a class="back" href="../">← All apps</a>
 <h1>MoodMeleon</h1>
-<p class="tag">하루의 감정을 색으로 남기는 기록장</p>
 <p class="meta">Track your daily mood as colors · iOS</p>
-
-<h2>소개 / About</h2>
-<p>하루에 한 번, 지금 기분을 색으로 고르면 그 색이 달력 한 칸을 채웁니다. 한 달이 지나면 내 감정이 어떤 색으로 흘러왔는지 한눈에 보입니다. 메모와 그림도 함께 남길 수 있습니다.</p>
-<p>Pick a color for how you feel, and it fills one cell of your calendar. Over a month, you can see at a glance how your moods have flowed. You can also leave notes and drawings.</p>
-
-<h2>주요 기능 / Features</h2>
-<ul class="feat">
+<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
+<h2 id="lang-0" lang="en">English</h2>
+<p class="tag" lang="en">Track your daily mood as colors</p>
+<h3>About</h3>
+<p lang="en">Pick a color for how you feel, and it fills one cell of your calendar. Over a month you can see at a glance how your moods have flowed. You can also leave notes and drawings.</p>
+<h3>Features</h3>
+<ul class="feat" lang="en">
+  <li><span class="t">Mood colors</span><span class="d">Choose from twelve mood colors and your calendar fills in.</span></li>
+  <li><span class="t">Pixel art</span><span class="d">Fill sample templates with mood colors to complete a picture.</span></li>
+  <li><span class="t">Statistics</span><span class="d">See which moods dominated your month or year.</span></li>
+  <li><span class="t">Google Drive backup (optional)</span><span class="d">Back up to an app-only folder in your own Google Drive so you can restore after changing devices. Only you and this app can reach that folder — the developer cannot.</span></li>
+</ul>
+<h3>About Google Drive backup</h3>
+<p lang="en">MoodMeleon offers Google Drive backup as an optional feature. It works only if you explicitly connect your own Google account.</p>
+<ol lang="en">
+  <li>The app requests a single scope: <strong>drive.appdata</strong>. It grants access <strong>only to a hidden, app-specific folder</strong> created by this app.</li>
+  <li>The app <strong>never reads or writes any other file</strong> in your Drive.</li>
+  <li>Backups are stored in <strong>your own Drive</strong>. The developer has no access, and nothing is sent to a developer server.</li>
+  <li>You can <strong>disconnect at any time</strong> in Settings.</li>
+  <li><strong>Every feature works</strong> without connecting an account.</li>
+</ol>
+<h3>Privacy</h3>
+<p lang="en">This app operates no developer server. See the privacy policy below for details.</p>
+<div class="btnrow"><a href="privacy/#lang-0">Privacy Policy</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-1" lang="ko">한국어</h2>
+<p class="tag" lang="ko">하루의 감정을 색으로 남기는 기록장</p>
+<h3>소개</h3>
+<p lang="ko">하루에 한 번, 지금 기분을 색으로 고르면 그 색이 달력 한 칸을 채웁니다. 한 달이 지나면 내 감정이 어떤 색으로 흘러왔는지 한눈에 보입니다. 메모와 그림도 함께 남길 수 있습니다.</p>
+<h3>주요 기능</h3>
+<ul class="feat" lang="ko">
   <li><span class="t">감정 색 기록</span><span class="d">12가지 감정 색 중에서 고르면 달력이 채워집니다.</span></li>
   <li><span class="t">픽셀 아트</span><span class="d">샘플 도안 위에 감정 색을 채워 그림을 완성합니다.</span></li>
   <li><span class="t">통계</span><span class="d">한 달·한 해 동안 어떤 감정이 많았는지 비율로 보여줍니다.</span></li>
-  <li><span class="t">Google Drive 백업 (선택)</span><span class="d">내 Google Drive의 앱 전용 폴더에 기록을 백업합니다. 기기를 바꿔도 복원할 수 있습니다. 이 폴더는 본인과 이 앱만 접근할 수 있으며 개발자는 접근할 수 없습니다. 연결하지 않아도 앱의 모든 기능을 쓸 수 있습니다.</span></li>
+  <li><span class="t">Google Drive 백업 (선택)</span><span class="d">내 Google Drive의 앱 전용 폴더에 백업해 기기를 바꿔도 복원할 수 있습니다. 이 폴더는 본인과 이 앱만 접근할 수 있으며 개발자는 접근할 수 없습니다.</span></li>
 </ul>
-
-<h2>Google Drive 백업에 대하여 / About Google Drive backup</h2>
-<p>MoodMeleon은(는) 선택 기능으로 Google Drive 백업을 제공합니다.
-사용자가 직접 Google 계정을 연결한 경우에만 동작합니다.</p>
-<ol>
-  <li>사용하는 권한은 <strong>drive.appdata</strong> 하나입니다. 이 권한은
-      <strong>이 앱이 만든 앱 전용 숨김 폴더</strong>에만 접근합니다.</li>
+<h3>Google Drive 백업에 대하여</h3>
+<p lang="ko">MoodMeleon은 선택 기능으로 Google Drive 백업을 제공합니다. 사용자가 직접 Google 계정을 연결한 경우에만 동작합니다.</p>
+<ol lang="ko">
+  <li>사용하는 권한은 <strong>drive.appdata</strong> 하나입니다. 이 권한은 <strong>이 앱이 만든 앱 전용 숨김 폴더</strong>에만 접근합니다.</li>
   <li>사용자의 다른 Google Drive 파일은 <strong>읽지도 쓰지도 않습니다.</strong></li>
-  <li>백업 파일은 <strong>사용자 본인의 Drive</strong>에 저장되며, 개발자는 접근할 수 없습니다.
-      개발자 서버로 전송되지 않습니다.</li>
+  <li>백업 파일은 <strong>사용자 본인의 Drive</strong>에 저장되며, 개발자는 접근할 수 없고 개발자 서버로 전송되지 않습니다.</li>
   <li>연결은 앱 설정에서 <strong>언제든 해제</strong>할 수 있습니다.</li>
   <li>연결하지 않아도 앱의 <strong>모든 기능을 사용할 수 있습니다.</strong></li>
 </ol>
-<p>MoodMeleon offers optional Google Drive backup. It works only if the user explicitly
-connects their own Google account. The app requests a single scope,
-<strong>drive.appdata</strong>, which grants access <strong>only to a hidden,
-app-specific folder</strong> created by this app. The app never reads or writes any other
-file in the user's Drive. Backups are stored in the user's own Drive; the developer has no
-access and nothing is sent to a developer server. Users can disconnect at any time in
-Settings, and every feature of the app works without connecting.</p>
-
-<h2>개인정보 / Privacy</h2>
-<p>MoodMeleon은(는) 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
-<div class="btnrow">
-  <a href="privacy/">개인정보 처리방침 / Privacy Policy</a>
-  <a href="mailto:supersons.apps@gmail.com">문의 / Contact</a>
-</div>
-
+<h3>개인정보</h3>
+<p lang="ko">이 앱은 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
+<div class="btnrow"><a href="privacy/#lang-1">개인정보 처리방침</a><a href="mailto:supersons.apps@gmail.com">문의</a></div>
+<h2 id="lang-2" lang="ja">日本語</h2>
+<p class="tag" lang="ja">その日の気分を色で残す日記</p>
+<h3>概要</h3>
+<p lang="ja">1日1回、いまの気分を色で選ぶとカレンダーの1マスが埋まります。1か月経つと、自分の気分がどんな色で流れてきたか一目で分かります。メモや絵も残せます。</p>
+<h3>主な機能</h3>
+<ul class="feat" lang="ja">
+  <li><span class="t">気分の色を記録</span><span class="d">12色の気分から選ぶだけでカレンダーが埋まります。</span></li>
+  <li><span class="t">ピクセルアート</span><span class="d">サンプル図案を気分の色で塗って絵を完成させます。</span></li>
+  <li><span class="t">統計</span><span class="d">1か月・1年でどの気分が多かったかを割合で表示します。</span></li>
+  <li><span class="t">Google ドライブ バックアップ(任意)</span><span class="d">ご自身のドライブのアプリ専用フォルダにバックアップし、機種変更後も復元できます。このフォルダには本人とこのアプリのみアクセスでき、開発者はアクセスできません。</span></li>
+</ul>
+<h3>Google ドライブ バックアップについて</h3>
+<p lang="ja">MoodMeleon は任意機能として Google ドライブ バックアップを提供します。利用者ご自身が Google アカウントを接続した場合にのみ動作します。</p>
+<ol lang="ja">
+  <li>要求する権限は <strong>drive.appdata</strong> の1つだけです。この権限は<strong>本アプリが作成したアプリ専用の隠しフォルダ</strong>のみにアクセスします。</li>
+  <li>ドライブ内の<strong>他のファイルは読み書きしません。</strong></li>
+  <li>バックアップは<strong>利用者本人のドライブ</strong>に保存され、開発者はアクセスできず、開発者サーバーへ送信されることもありません。</li>
+  <li>接続は設定から<strong>いつでも解除</strong>できます。</li>
+  <li>アカウントを接続しなくても<strong>すべての機能を利用できます。</strong></li>
+</ol>
+<h3>プライバシー</h3>
+<p lang="ja">本アプリは開発者サーバーを運用していません。詳しくは下記をご覧ください。</p>
+<div class="btnrow"><a href="privacy/#lang-2">プライバシーポリシー</a><a href="mailto:supersons.apps@gmail.com">お問い合わせ</a></div>
+<h2 id="lang-3" lang="zh-Hant">繁體中文</h2>
+<p class="tag" lang="zh-Hant">用顏色記錄每天心情的日記</p>
+<h3>簡介</h3>
+<p lang="zh-Hant">每天一次，選出此刻的心情顏色，日曆上的一格就會被填滿。一個月後，就能一眼看出自己的心情是如何流動的。也可以留下備註和圖畫。</p>
+<h3>主要功能</h3>
+<ul class="feat" lang="zh-Hant">
+  <li><span class="t">心情顏色紀錄</span><span class="d">從 12 種心情顏色中挑選，日曆便會填滿。</span></li>
+  <li><span class="t">像素畫</span><span class="d">在範例圖稿上填入心情顏色，完成一幅畫。</span></li>
+  <li><span class="t">統計</span><span class="d">以比例呈現一個月、一年中哪些心情最多。</span></li>
+  <li><span class="t">Google 雲端硬碟備份（選用）</span><span class="d">備份至您自己雲端硬碟的應用程式專用資料夾，換機後也能還原。該資料夾僅您本人與本應用程式可存取，開發者無法存取。</span></li>
+</ul>
+<h3>關於 Google 雲端硬碟備份</h3>
+<p lang="zh-Hant">MoodMeleon 提供 Google 雲端硬碟備份作為選用功能，僅在您主動連結自己的 Google 帳戶時才會運作。</p>
+<ol lang="zh-Hant">
+  <li>本應用程式僅要求一項權限：<strong>drive.appdata</strong>，該權限<strong>僅能存取本應用程式建立的隱藏專用資料夾</strong>。</li>
+  <li>本應用程式<strong>絕不讀取或寫入</strong>您雲端硬碟中的任何其他檔案。</li>
+  <li>備份儲存於<strong>您本人的雲端硬碟</strong>，開發者無法存取，也不會傳送至開發者伺服器。</li>
+  <li>您可以在設定中<strong>隨時解除連結</strong>。</li>
+  <li>即使不連結帳戶，<strong>所有功能仍可正常使用</strong>。</li>
+</ol>
+<h3>隱私權</h3>
+<p lang="zh-Hant">本應用程式未運作任何開發者伺服器。詳情請參閱下方說明。</p>
+<div class="btnrow"><a href="privacy/#lang-3">隱私權政策</a><a href="mailto:supersons.apps@gmail.com">聯絡我們</a></div>
+<h2 id="lang-4" lang="es">Español</h2>
+<p class="tag" lang="es">Un diario que registra tu ánimo con colores</p>
+<h3>Acerca de</h3>
+<p lang="es">Una vez al día, elige un color para cómo te sientes y ese color llenará una casilla del calendario. Al cabo de un mes verás de un vistazo cómo han fluido tus emociones. También puedes añadir notas y dibujos.</p>
+<h3>Funciones</h3>
+<ul class="feat" lang="es">
+  <li><span class="t">Colores de ánimo</span><span class="d">Elige entre doce colores y tu calendario se va llenando.</span></li>
+  <li><span class="t">Pixel art</span><span class="d">Rellena plantillas con tus colores de ánimo para completar un dibujo.</span></li>
+  <li><span class="t">Estadísticas</span><span class="d">Descubre qué emociones predominaron en tu mes o año.</span></li>
+  <li><span class="t">Copia en Google Drive (opcional)</span><span class="d">Haz copia en una carpeta exclusiva de tu propio Google Drive para restaurar al cambiar de dispositivo. Solo usted y esta app pueden acceder a esa carpeta; el desarrollador no.</span></li>
+</ul>
+<h3>Sobre la copia de seguridad en Google Drive</h3>
+<p lang="es">MoodMeleon ofrece copia de seguridad en Google Drive como función opcional. Solo funciona si usted conecta explícitamente su propia cuenta de Google.</p>
+<ol lang="es">
+  <li>La app solicita un único permiso: <strong>drive.appdata</strong>, que da acceso <strong>únicamente a una carpeta oculta y propia de la app</strong>.</li>
+  <li>La app <strong>nunca lee ni escribe ningún otro archivo</strong> de su Drive.</li>
+  <li>Las copias se guardan en <strong>su propio Drive</strong>. El desarrollador no tiene acceso y nada se envía a un servidor del desarrollador.</li>
+  <li>Puede <strong>desconectarla en cualquier momento</strong> en Ajustes.</li>
+  <li><strong>Todas las funciones</strong> están disponibles sin conectar una cuenta.</li>
+</ol>
+<h3>Privacidad</h3>
+<p lang="es">Esta aplicación no opera ningún servidor propio. Consulte la política de privacidad.</p>
+<div class="btnrow"><a href="privacy/#lang-4">Política de privacidad</a><a href="mailto:supersons.apps@gmail.com">Contacto</a></div>
+<h2 id="lang-5" lang="fr">Français</h2>
+<p class="tag" lang="fr">Un journal qui note votre humeur en couleurs</p>
+<h3>À propos</h3>
+<p lang="fr">Une fois par jour, choisissez une couleur correspondant à votre humeur : elle remplit une case du calendrier. Au bout d&#x27;un mois, vous voyez d&#x27;un coup d&#x27;œil comment vos émotions ont évolué. Vous pouvez aussi ajouter des notes et des dessins.</p>
+<h3>Fonctionnalités</h3>
+<ul class="feat" lang="fr">
+  <li><span class="t">Couleurs d&#x27;humeur</span><span class="d">Choisissez parmi douze couleurs et votre calendrier se remplit.</span></li>
+  <li><span class="t">Pixel art</span><span class="d">Remplissez des modèles avec vos couleurs pour composer une image.</span></li>
+  <li><span class="t">Statistiques</span><span class="d">Voyez quelles émotions ont dominé votre mois ou votre année.</span></li>
+  <li><span class="t">Sauvegarde Google Drive (facultative)</span><span class="d">Sauvegardez dans un dossier réservé à l&#x27;app sur votre propre Drive pour restaurer après un changement d&#x27;appareil. Seuls vous et cette application y accédez, jamais le développeur.</span></li>
+</ul>
+<h3>À propos de la sauvegarde Google Drive</h3>
+<p lang="fr">MoodMeleon propose la sauvegarde Google Drive en option. Elle ne fonctionne que si vous connectez explicitement votre propre compte Google.</p>
+<ol lang="fr">
+  <li>L'application demande une seule autorisation : <strong>drive.appdata</strong>, qui donne accès <strong>uniquement à un dossier caché propre à l'application</strong>.</li>
+  <li>L'application <strong>ne lit ni n'écrit aucun autre fichier</strong> de votre Drive.</li>
+  <li>Les sauvegardes sont stockées dans <strong>votre propre Drive</strong>. Le développeur n'y a pas accès et rien n'est envoyé à un serveur du développeur.</li>
+  <li>Vous pouvez <strong>vous déconnecter à tout moment</strong> dans les Réglages.</li>
+  <li><strong>Toutes les fonctionnalités</strong> restent disponibles sans compte connecté.</li>
+</ol>
+<h3>Confidentialité</h3>
+<p lang="fr">Cette application n&#x27;exploite aucun serveur du développeur. Voir la politique ci-dessous.</p>
+<div class="btnrow"><a href="privacy/#lang-5">Politique de confidentialité</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-6" lang="de">Deutsch</h2>
+<p class="tag" lang="de">Ein Tagebuch, das Ihre Stimmung in Farben festhält</p>
+<h3>Über die App</h3>
+<p lang="de">Wählen Sie einmal täglich eine Farbe für Ihre Stimmung – sie füllt ein Feld im Kalender. Nach einem Monat sehen Sie auf einen Blick, wie Ihre Stimmungen verlaufen sind. Notizen und Zeichnungen sind ebenfalls möglich.</p>
+<h3>Funktionen</h3>
+<ul class="feat" lang="de">
+  <li><span class="t">Stimmungsfarben</span><span class="d">Wählen Sie aus zwölf Farben, und Ihr Kalender füllt sich.</span></li>
+  <li><span class="t">Pixel-Art</span><span class="d">Füllen Sie Vorlagen mit Stimmungsfarben zu einem Bild.</span></li>
+  <li><span class="t">Statistik</span><span class="d">Sehen Sie, welche Stimmungen Monat oder Jahr geprägt haben.</span></li>
+  <li><span class="t">Google-Drive-Sicherung (optional)</span><span class="d">Sichern Sie in einen app-eigenen Ordner Ihres eigenen Drive, um nach einem Gerätewechsel wiederherzustellen. Nur Sie und diese App haben Zugriff, der Entwickler nicht.</span></li>
+</ul>
+<h3>Über die Google-Drive-Sicherung</h3>
+<p lang="de">MoodMeleon bietet die Google-Drive-Sicherung als optionale Funktion an. Sie funktioniert nur, wenn Sie Ihr eigenes Google-Konto ausdrücklich verbinden.</p>
+<ol lang="de">
+  <li>Die App fordert eine einzige Berechtigung an: <strong>drive.appdata</strong>. Sie gewährt Zugriff <strong>ausschließlich auf einen versteckten, app-eigenen Ordner</strong>.</li>
+  <li>Die App <strong>liest und schreibt keine anderen Dateien</strong> in Ihrem Drive.</li>
+  <li>Sicherungen liegen in <strong>Ihrem eigenen Drive</strong>. Der Entwickler hat keinen Zugriff, und nichts wird an einen Entwickler-Server gesendet.</li>
+  <li>Sie können die Verbindung <strong>jederzeit in den Einstellungen trennen</strong>.</li>
+  <li><strong>Alle Funktionen</strong> sind auch ohne verbundenes Konto nutzbar.</li>
+</ol>
+<h3>Datenschutz</h3>
+<p lang="de">Diese App betreibt keinen Entwickler-Server. Einzelheiten in der Datenschutzrichtlinie.</p>
+<div class="btnrow"><a href="privacy/#lang-6">Datenschutzrichtlinie</a><a href="mailto:supersons.apps@gmail.com">Kontakt</a></div>
+<h2 id="lang-7" lang="hi">हिन्दी</h2>
+<p class="tag" lang="hi">हर दिन के मूड को रंगों में दर्ज करने वाली डायरी</p>
+<h3>परिचय</h3>
+<p lang="hi">दिन में एक बार अपने मूड का रंग चुनें — वह रंग कैलेंडर के एक खाने को भर देता है। एक महीने बाद आप एक नज़र में देख सकते हैं कि आपकी भावनाएँ किन रंगों में बहीं। नोट्स और चित्र भी जोड़ सकते हैं।</p>
+<h3>मुख्य विशेषताएँ</h3>
+<ul class="feat" lang="hi">
+  <li><span class="t">मूड के रंग</span><span class="d">बारह मूड रंगों में से चुनें और कैलेंडर भरता जाएगा।</span></li>
+  <li><span class="t">पिक्सेल आर्ट</span><span class="d">नमूना टेम्पलेट में मूड के रंग भरकर चित्र पूरा करें।</span></li>
+  <li><span class="t">आँकड़े</span><span class="d">देखें कि महीने या साल में कौन-सी भावनाएँ अधिक रहीं।</span></li>
+  <li><span class="t">Google Drive बैकअप (वैकल्पिक)</span><span class="d">अपने Drive के ऐप-विशेष फ़ोल्डर में बैकअप लें ताकि डिवाइस बदलने पर पुनर्स्थापित कर सकें। उस फ़ोल्डर तक केवल आप और यह ऐप पहुँच सकते हैं, डेवलपर नहीं।</span></li>
+</ul>
+<h3>Google Drive बैकअप के बारे में</h3>
+<p lang="hi">MoodMeleon एक वैकल्पिक सुविधा के रूप में Google Drive बैकअप देता है। यह तभी काम करता है जब आप स्वयं अपना Google खाता जोड़ते हैं।</p>
+<ol lang="hi">
+  <li>ऐप केवल एक अनुमति माँगता है: <strong>drive.appdata</strong>, जो <strong>केवल इस ऐप द्वारा बनाए गए छिपे हुए ऐप-विशिष्ट फ़ोल्डर</strong> तक पहुँच देती है।</li>
+  <li>ऐप आपके Drive की <strong>किसी अन्य फ़ाइल को न पढ़ता है न लिखता है।</strong></li>
+  <li>बैकअप <strong>आपके अपने Drive</strong> में रहता है। डेवलपर की कोई पहुँच नहीं है और कुछ भी डेवलपर सर्वर को नहीं भेजा जाता।</li>
+  <li>आप सेटिंग्स में <strong>कभी भी संपर्क हटा सकते हैं</strong>।</li>
+  <li>खाता जोड़े बिना भी <strong>ऐप की सभी सुविधाएँ</strong> काम करती हैं।</li>
+</ol>
+<h3>गोपनीयता</h3>
+<p lang="hi">यह ऐप कोई डेवलपर सर्वर नहीं चलाता। विवरण के लिए नीचे गोपनीयता नीति देखें।</p>
+<div class="btnrow"><a href="privacy/#lang-7">गोपनीयता नीति</a><a href="mailto:supersons.apps@gmail.com">संपर्क</a></div>
 <footer>
-  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>
