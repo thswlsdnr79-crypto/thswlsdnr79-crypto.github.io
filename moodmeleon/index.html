@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MoodMeleon — Track your daily mood as colors</title>
+<title>MoodMeleon</title>
 <style>
 :root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -48,6 +48,8 @@ a:hover{text-decoration:underline}
 .langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
          background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
 .langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.purpose{font-size:1rem;margin:14px 0}
+.allapps{margin-top:56px;font-size:.9rem}
 .btnrow{margin:18px 0 0}
 .btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
           background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
@@ -58,9 +60,9 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← All apps</a>
 <h1>MoodMeleon</h1>
-<p class="meta">Track your daily mood as colors · iOS</p>
+<p class="tag">Track your daily mood as colors</p>
+<p class="purpose"><strong>MoodMeleon</strong> is an iOS app. Pick a color for how you feel, and it fills one cell of your calendar. Over a month you can see at a glance how your moods have flowed. You can also leave notes and drawings.</p><p class="purpose">MoodMeleon uses Google Drive solely to back up the user's own diary data to a hidden, app-specific folder in their personal Drive, so the data can be restored after changing devices. It requests only the <strong>drive.appdata</strong> scope and never accesses any other file in the user's Drive.</p>
 <nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
 <h2 id="lang-0" lang="en">English</h2>
 <p class="tag" lang="en">Track your daily mood as colors</p>
@@ -246,6 +248,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 <h3>गोपनीयता</h3>
 <p lang="hi">यह ऐप कोई डेवलपर सर्वर नहीं चलाता। विवरण के लिए नीचे गोपनीयता नीति देखें।</p>
 <div class="btnrow"><a href="privacy/#lang-7">गोपनीयता नीति</a><a href="terms/#lang-7">सेवा की शर्तें</a><a href="mailto:supersons.apps@gmail.com">संपर्क</a></div>
+<p class="allapps"><a href="../">All apps</a></p>
 <footer>
   Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
