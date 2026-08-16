@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OctoPick Privacy Policy</title>
+<title>OctoPick — Draws, orders and team splits</title>
 <style>
 :root{
   --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
@@ -20,16 +20,15 @@ body{
   margin:0; background:var(--bg); color:var(--fg);
   font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
               "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px;
-  -webkit-text-size-adjust:100%;
+  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
 }
 .wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.6rem; line-height:1.35; margin:0 0 8px; letter-spacing:-0.01em}
-h2{
-  font-size:1.15rem; margin:48px 0 12px; padding-top:24px;
-  border-top:1px solid var(--line); letter-spacing:-0.01em;
-}
+h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
+h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
+   border-top:1px solid var(--line); letter-spacing:-0.01em}
 h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
+h3{font-size:1rem; margin:26px 0 4px}
+.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
 .meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
 .meta a{color:var(--muted)}
 hr{border:0; border-top:1px solid var(--line); margin:32px 0}
@@ -39,115 +38,63 @@ p{margin:16px 0}
 strong{font-weight:600}
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{
-  background:var(--card); border:1px solid var(--line); border-radius:12px;
-  padding:16px 18px; margin:20px 0;
-}
+.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
+      padding:16px 18px; margin:20px 0}
 .lead p{margin:0}
 .back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
 .applist{list-style:none; padding:0; margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{
-  display:block; padding:18px 20px; border:1px solid var(--line);
-  border-radius:12px; background:var(--card); color:inherit;
-}
+.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
+           border-radius:12px; background:var(--card); color:inherit}
 .applist a:hover{border-color:var(--accent); text-decoration:none}
 .applist .name{font-weight:600; font-size:1.05rem}
 .applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
+.feat{list-style:none; padding:0; margin:20px 0 0}
+.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
+         padding:16px 18px; margin:0 0 10px}
+.feat .t{font-weight:600; display:block; margin-bottom:2px}
+.feat .d{color:var(--muted); font-size:.94rem}
 .langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{
-  display:inline-block; padding:6px 12px; border:1px solid var(--line);
-  border-radius:999px; background:var(--card); color:var(--muted);
-  font-size:.85rem; white-space:nowrap;
-}
+.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
+         border-radius:999px; background:var(--card); color:var(--muted);
+         font-size:.85rem; white-space:nowrap}
 .langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
 h2{scroll-margin-top:16px}
+.btnrow{margin:26px 0 0}
+.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
+          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
+.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
 footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
        color:var(--muted); font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← 전체 앱</a>
-<h1>OctoPick — Privacy Policy / 개인정보처리방침</h1>
-<p class="meta">Effective date / 시행일: 2026-08-16 · Contact / 문의: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a></p>
-<hr>
-<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
-<h2 id="lang-0">English</h2>
-<div class="lead"><p><strong>OctoPick operates no developer server and does not collect your personal data.</strong></p></div>
-<ol>
-<li><strong>Rosters &amp; draw history</strong> — Names you enter, presets and draw results are <strong>stored only on your device</strong> and are never transmitted to the developer or third parties. Sharing results is a manual, user-initiated action.</li>
-<li><strong>Usage analytics</strong> — Google Firebase Analytics/Crashlytics collect anonymized usage statistics (screens, buttons, device model, app version) and crash logs to improve the app. Names and draw results are never included. Data is transferred to and stored by Google LLC (US and other countries); retention up to 14 months.</li>
-<li><strong>Payments</strong> — The optional &quot;Support the Developer&quot; purchase is processed by the Apple App Store; the developer cannot access your payment details.</li>
-<li>This app is not directed at children and contains no advertising or tracking SDKs.</li>
-<li>Changes to this policy will be announced on this page.</li>
-</ol>
-<h2 id="lang-1">한국어</h2>
-<div class="lead"><p><strong>OctoPick은 개발자 서버를 운영하지 않으며, 이용자의 개인정보를 수집하지 않습니다.</strong></p></div>
-<ol>
-<li><strong>명단·추첨 이력</strong> — 입력한 이름, 프리셋, 추첨 결과는 <strong>기기 안에만 저장</strong>되며 개발자를 포함한 외부로 전송되지 않습니다. 결과 공유는 이용자가 직접 실행하는 기능입니다.</li>
-<li><strong>앱 사용 통계</strong> — 서비스 개선을 위해 Google Firebase Analytics·Crashlytics가 익명화된 사용 통계(화면·버튼 이용, 기기 모델, 앱 버전)와 충돌 로그를 수집합니다. 입력한 이름·추첨 결과는 포함되지 않습니다. 이 데이터는 Google LLC(미국 등 국외)로 이전·보관됩니다. — 국외 이전 항목: 이전받는 자 Google LLC, 목적 앱 품질 분석, 항목 위 기재, 보유기간 최대 14개월.</li>
-<li><strong>결제</strong> — 앱 내 &#x27;개발자 응원하기&#x27; 결제는 Apple App Store가 처리하며, 개발자는 결제 수단 정보에 접근할 수 없습니다.</li>
-<li>본 앱은 아동을 대상으로 하지 않으며, 광고·추적 SDK를 사용하지 않습니다.</li>
-<li>방침이 변경되면 이 페이지에 고지합니다.</li>
-</ol>
-<h2 id="lang-2">日本語</h2>
-<div class="lead"><p><strong>OctoPick は開発者サーバーを運用しておらず、利用者の個人情報を収集しません。</strong></p></div>
-<ol>
-<li><strong>名簿・抽選履歴</strong> — 入力した名前、プリセット、抽選結果は<strong>端末内にのみ保存</strong>され、開発者を含む外部へ送信されることはありません。結果の共有は利用者自身が実行する機能です。</li>
-<li><strong>利用統計</strong> — サービス改善のため、Google Firebase Analytics・Crashlytics が匿名化された利用統計(画面・ボタンの利用、端末モデル、アプリバージョン)とクラッシュログを収集します。入力した名前や抽選結果は含まれません。 データは Google LLC(米国等)に移転・保管されます。保持期間は最長14か月です。</li>
-<li><strong>決済</strong> — アプリ内の「開発者を応援」の決済は Apple App Store が処理し、開発者は決済情報にアクセスできません。</li>
-<li>本アプリは児童を対象とせず、広告・トラッキングSDKを使用しません。</li>
-<li>本ポリシーを変更する場合は本ページで告知します。</li>
-</ol>
-<h2 id="lang-3">繁體中文</h2>
-<div class="lead"><p><strong>OctoPick 未運作任何開發者伺服器，也不會收集您的個人資料。</strong></p></div>
-<ol>
-<li><strong>名單與抽籤紀錄</strong> — 您輸入的姓名、預設組合與抽籤結果<strong>僅儲存於您的裝置</strong>，絕不會傳送給開發者或第三方。分享結果是由您自行執行的功能。</li>
-<li><strong>應用程式使用統計</strong> — 為改善服務，Google Firebase Analytics 與 Crashlytics 會收集匿名化的使用統計（畫面與按鈕的使用情況、裝置型號、應用程式版本）以及當機紀錄。其中不包含您輸入的姓名或抽籤結果。 資料會傳輸並儲存於 Google LLC（美國等國家），保存期限最長 14 個月。</li>
-<li><strong>付款</strong> — 應用程式內「支持開發者」的購買由 Apple App Store 處理，開發者無法存取您的付款資訊。</li>
-<li>本應用程式不以兒童為對象，且不使用廣告或追蹤 SDK。</li>
-<li>本政策若有變更，將於本頁公告。</li>
-</ol>
-<h2 id="lang-4">Español</h2>
-<div class="lead"><p><strong>OctoPick no opera ningún servidor propio y no recopila sus datos personales.</strong></p></div>
-<ol>
-<li><strong>Listas e historial de sorteos</strong> — Los nombres que introduce, los ajustes guardados y los resultados se <strong>almacenan únicamente en su dispositivo</strong> y nunca se transmiten al desarrollador ni a terceros. Compartir los resultados es una acción que usted inicia manualmente.</li>
-<li><strong>Estadísticas de uso</strong> — Google Firebase Analytics y Crashlytics recopilan estadísticas de uso anonimizadas (pantallas, botones, modelo de dispositivo, versión de la app) y registros de fallos para mejorar la aplicación. Los nombres y los resultados de los sorteos nunca se incluyen. Los datos se transfieren y almacenan en Google LLC (EE. UU. y otros países); conservación hasta 14 meses.</li>
-<li><strong>Pagos</strong> — La compra opcional «Apoyar al desarrollador» se procesa a través de Apple App Store; el desarrollador no puede acceder a sus datos de pago.</li>
-<li>Esta aplicación no está dirigida a menores y no contiene publicidad ni SDK de seguimiento.</li>
-<li>Cualquier cambio en esta política se anunciará en esta página.</li>
-</ol>
-<h2 id="lang-5">Français</h2>
-<div class="lead"><p><strong>OctoPick n&#x27;exploite aucun serveur du développeur et ne collecte pas vos données personnelles.</strong></p></div>
-<ol>
-<li><strong>Listes et historique des tirages</strong> — Les noms que vous saisissez, les préréglages et les résultats sont <strong>stockés uniquement sur votre appareil</strong> et ne sont jamais transmis au développeur ni à des tiers. Le partage des résultats est une action que vous déclenchez vous-même.</li>
-<li><strong>Statistiques d&#x27;utilisation</strong> — Google Firebase Analytics et Crashlytics collectent des statistiques d&#x27;utilisation anonymisées (écrans, boutons, modèle d&#x27;appareil, version de l&#x27;application) et des rapports de plantage afin d&#x27;améliorer l&#x27;application. Les noms et les résultats des tirages n&#x27;y figurent jamais. Les données sont transférées et stockées par Google LLC (États-Unis et autres pays) ; conservation jusqu&#x27;à 14 mois.</li>
-<li><strong>Paiements</strong> — L&#x27;achat facultatif « Soutenir le développeur » est traité par l&#x27;App Store d&#x27;Apple ; le développeur n&#x27;a pas accès à vos informations de paiement.</li>
-<li>Cette application ne s&#x27;adresse pas aux enfants et ne contient ni publicité ni SDK de suivi.</li>
-<li>Toute modification de cette politique sera annoncée sur cette page.</li>
-</ol>
-<h2 id="lang-6">Deutsch</h2>
-<div class="lead"><p><strong>OctoPick betreibt keinen Entwickler-Server und erhebt keine personenbezogenen Daten.</strong></p></div>
-<ol>
-<li><strong>Namenslisten &amp; Ziehungsverlauf</strong> — Von Ihnen eingegebene Namen, Voreinstellungen und Ergebnisse werden <strong>ausschließlich auf Ihrem Gerät gespeichert</strong> und niemals an den Entwickler oder Dritte übertragen. Das Teilen von Ergebnissen lösen Sie selbst aus.</li>
-<li><strong>Nutzungsstatistiken</strong> — Google Firebase Analytics und Crashlytics erfassen anonymisierte Nutzungsstatistiken (Bildschirme, Schaltflächen, Gerätemodell, App-Version) sowie Absturzberichte zur Verbesserung der App. Namen und Ziehungsergebnisse sind darin nie enthalten. Die Daten werden an Google LLC (USA und andere Länder) übertragen und dort gespeichert; Aufbewahrung bis zu 14 Monate.</li>
-<li><strong>Zahlungen</strong> — Der optionale Kauf „Entwickler unterstützen&quot; wird vom Apple App Store abgewickelt; der Entwickler hat keinen Zugriff auf Ihre Zahlungsdaten.</li>
-<li>Diese App richtet sich nicht an Kinder und enthält weder Werbung noch Tracking-SDKs.</li>
-<li>Änderungen dieser Richtlinie werden auf dieser Seite bekannt gegeben.</li>
-</ol>
-<h2 id="lang-7">हिन्दी</h2>
-<div class="lead"><p><strong>OctoPick कोई डेवलपर सर्वर नहीं चलाता और आपका व्यक्तिगत डेटा एकत्र नहीं करता।</strong></p></div>
-<ol>
-<li><strong>सूचियाँ और ड्रॉ इतिहास</strong> — आपके द्वारा दर्ज नाम, प्रीसेट और परिणाम <strong>केवल आपके डिवाइस पर संग्रहीत</strong> होते हैं और कभी भी डेवलपर या तीसरे पक्ष को नहीं भेजे जाते। परिणाम साझा करना आपके द्वारा स्वयं शुरू की जाने वाली क्रिया है।</li>
-<li><strong>उपयोग आँकड़े</strong> — ऐप को बेहतर बनाने के लिए Google Firebase Analytics और Crashlytics गुमनाम उपयोग आँकड़े (स्क्रीन, बटन, डिवाइस मॉडल, ऐप संस्करण) और क्रैश लॉग एकत्र करते हैं। नाम और ड्रॉ परिणाम इसमें कभी शामिल नहीं होते। डेटा Google LLC (अमेरिका और अन्य देश) को स्थानांतरित और वहाँ संग्रहीत किया जाता है; अधिकतम 14 महीने तक रखा जाता है।</li>
-<li><strong>भुगतान</strong> — ऐप में «डेवलपर को सहयोग» की वैकल्पिक खरीद Apple App Store द्वारा संसाधित की जाती है; डेवलपर आपकी भुगतान जानकारी तक नहीं पहुँच सकता।</li>
-<li>यह ऐप बच्चों के लिए लक्षित नहीं है और इसमें कोई विज्ञापन या ट्रैकिंग SDK नहीं है।</li>
-<li>इस नीति में कोई भी बदलाव इसी पृष्ठ पर सूचित किया जाएगा।</li>
-</ol>
+<a class="back" href="../">← 전체 앱 / All apps</a>
+<h1>OctoPick</h1>
+<p class="tag">뽑기·순서·팀 나누기 도구</p>
+<p class="meta">Draws, orders and team splits · iOS</p>
+
+<h2>소개 / About</h2>
+<p>이름을 넣고 버튼만 누르면 뽑기·순서 정하기·팀 나누기가 끝납니다. 자주 쓰는 명단은 프리셋으로 저장해 두고 다시 쓸 수 있습니다.</p>
+<p>Enter names and tap once for a draw, an order, or team split. Save frequently used rosters as presets.</p>
+
+<h2>주요 기능 / Features</h2>
+<ul class="feat">
+  <li><span class="t">세 가지 모드</span><span class="d">뽑기 · 순서 정하기 · 팀 나누기.</span></li>
+  <li><span class="t">프리셋</span><span class="d">자주 쓰는 명단을 저장해 재사용.</span></li>
+  <li><span class="t">결과 공유</span><span class="d">뽑은 결과를 이미지로 공유.</span></li>
+</ul>
+
+<h2>개인정보 / Privacy</h2>
+<p>OctoPick은(는) 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
+<div class="btnrow">
+  <a href="privacy/">개인정보 처리방침 / Privacy Policy</a>
+  <a href="mailto:supersons.apps@gmail.com">문의 / Contact</a>
+</div>
+
 <footer>
-  이 페이지는 App Store에 등록된 개인정보 처리방침입니다.<br>
-  문의: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MoodMeleon Privacy Policy</title>
+<title>MoodMeleon — Track your daily mood as colors</title>
 <style>
 :root{
   --bg:#ffffff; --fg:#1c1c1e; --muted:#6b6b70; --line:#e5e5ea;
@@ -20,16 +20,15 @@ body{
   margin:0; background:var(--bg); color:var(--fg);
   font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
               "Noto Sans KR","Helvetica Neue",Arial,sans-serif;
-  line-height:1.75; font-size:16px;
-  -webkit-text-size-adjust:100%;
+  line-height:1.75; font-size:16px; -webkit-text-size-adjust:100%;
 }
 .wrap{max-width:720px; margin:0 auto; padding:48px 20px 96px}
-h1{font-size:1.6rem; line-height:1.35; margin:0 0 8px; letter-spacing:-0.01em}
-h2{
-  font-size:1.15rem; margin:48px 0 12px; padding-top:24px;
-  border-top:1px solid var(--line); letter-spacing:-0.01em;
-}
+h1{font-size:1.7rem; line-height:1.3; margin:0 0 6px; letter-spacing:-0.02em}
+h2{font-size:1.15rem; margin:44px 0 12px; padding-top:22px;
+   border-top:1px solid var(--line); letter-spacing:-0.01em}
 h2:first-of-type{border-top:0; padding-top:0; margin-top:32px}
+h3{font-size:1rem; margin:26px 0 4px}
+.tag{color:var(--muted); font-size:1.02rem; margin:0 0 4px}
 .meta{color:var(--muted); font-size:.875rem; margin:0 0 8px}
 .meta a{color:var(--muted)}
 hr{border:0; border-top:1px solid var(--line); margin:32px 0}
@@ -39,123 +38,84 @@ p{margin:16px 0}
 strong{font-weight:600}
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
-.lead{
-  background:var(--card); border:1px solid var(--line); border-radius:12px;
-  padding:16px 18px; margin:20px 0;
-}
+.lead{background:var(--card); border:1px solid var(--line); border-radius:12px;
+      padding:16px 18px; margin:20px 0}
 .lead p{margin:0}
 .back{display:inline-block; margin-bottom:28px; font-size:.9rem; color:var(--muted)}
 .applist{list-style:none; padding:0; margin:28px 0 0}
 .applist li{margin:0 0 12px}
-.applist a{
-  display:block; padding:18px 20px; border:1px solid var(--line);
-  border-radius:12px; background:var(--card); color:inherit;
-}
+.applist a{display:block; padding:18px 20px; border:1px solid var(--line);
+           border-radius:12px; background:var(--card); color:inherit}
 .applist a:hover{border-color:var(--accent); text-decoration:none}
 .applist .name{font-weight:600; font-size:1.05rem}
 .applist .desc{color:var(--muted); font-size:.9rem; margin-top:2px}
+.feat{list-style:none; padding:0; margin:20px 0 0}
+.feat li{border:1px solid var(--line); border-radius:12px; background:var(--card);
+         padding:16px 18px; margin:0 0 10px}
+.feat .t{font-weight:600; display:block; margin-bottom:2px}
+.feat .d{color:var(--muted); font-size:.94rem}
 .langs{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 8px}
-.langs a{
-  display:inline-block; padding:6px 12px; border:1px solid var(--line);
-  border-radius:999px; background:var(--card); color:var(--muted);
-  font-size:.85rem; white-space:nowrap;
-}
+.langs a{display:inline-block; padding:6px 12px; border:1px solid var(--line);
+         border-radius:999px; background:var(--card); color:var(--muted);
+         font-size:.85rem; white-space:nowrap}
 .langs a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
 h2{scroll-margin-top:16px}
+.btnrow{margin:26px 0 0}
+.btnrow a{display:inline-block; padding:11px 20px; border:1px solid var(--line);
+          border-radius:10px; background:var(--card); margin:0 8px 8px 0; color:inherit}
+.btnrow a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
 footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
        color:var(--muted); font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-<a class="back" href="../">← 전체 앱</a>
-<h1>MoodMeleon — Privacy Policy / 개인정보처리방침</h1>
-<p class="meta">Effective date / 시행일: 2026-08-16 · Contact / 문의: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a></p>
-<hr>
-<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">हिन्दी</a></nav>
-<h2 id="lang-0">English</h2>
-<div class="lead"><p><strong>MoodMeleon operates no developer server. Your diary content never leaves your device; only anonymous usage statistics are collected to improve the app.</strong></p></div>
+<a class="back" href="../">← 전체 앱 / All apps</a>
+<h1>MoodMeleon</h1>
+<p class="tag">하루의 감정을 색으로 남기는 기록장</p>
+<p class="meta">Track your daily mood as colors · iOS</p>
+
+<h2>소개 / About</h2>
+<p>하루에 한 번, 지금 기분을 색으로 고르면 그 색이 달력 한 칸을 채웁니다. 한 달이 지나면 내 감정이 어떤 색으로 흘러왔는지 한눈에 보입니다. 메모와 그림도 함께 남길 수 있습니다.</p>
+<p>Pick a color for how you feel, and it fills one cell of your calendar. Over a month, you can see at a glance how your moods have flowed. You can also leave notes and drawings.</p>
+
+<h2>주요 기능 / Features</h2>
+<ul class="feat">
+  <li><span class="t">감정 색 기록</span><span class="d">12가지 감정 색 중에서 고르면 달력이 채워집니다.</span></li>
+  <li><span class="t">픽셀 아트</span><span class="d">샘플 도안 위에 감정 색을 채워 그림을 완성합니다.</span></li>
+  <li><span class="t">통계</span><span class="d">한 달·한 해 동안 어떤 감정이 많았는지 비율로 보여줍니다.</span></li>
+  <li><span class="t">Google Drive 백업 (선택)</span><span class="d">내 Google Drive의 앱 전용 폴더에 기록을 백업합니다. 기기를 바꿔도 복원할 수 있습니다. 이 폴더는 본인과 이 앱만 접근할 수 있으며 개발자는 접근할 수 없습니다. 연결하지 않아도 앱의 모든 기능을 쓸 수 있습니다.</span></li>
+</ul>
+
+<h2>Google Drive 백업에 대하여 / About Google Drive backup</h2>
+<p>MoodMeleon은(는) 선택 기능으로 Google Drive 백업을 제공합니다.
+사용자가 직접 Google 계정을 연결한 경우에만 동작합니다.</p>
 <ol>
-<li><strong>Mood records</strong> — All records (mood colors, notes, drawings) are <strong>stored only on your device</strong> and are never transmitted to the developer or third parties.</li>
-<li><strong>Backup (optional)</strong> — If you connect your Google account, your records are backed up to <strong>your own Google Drive app-data folder</strong>, accessible only to you and this app — never to the developer. Google sign-in and storage are governed by Google&#x27;s privacy policy. You can disconnect anytime in Settings.</li>
-<li><strong>Usage analytics</strong> — Google Firebase Analytics/Crashlytics collect anonymized usage statistics (screens, buttons, device model, app version) and crash logs to improve the app. Your mood records and notes are never included. Data is transferred to and stored by Google LLC (US and other countries); retention up to 14 months.</li>
-<li><strong>Payments</strong> — The optional &quot;Support the Developer&quot; purchase is processed by the Apple App Store; the developer cannot access your payment details.</li>
-<li>This app is not directed at children and contains no advertising or tracking SDKs.</li>
-<li>Changes to this policy will be announced on this page.</li>
+  <li>사용하는 권한은 <strong>drive.appdata</strong> 하나입니다. 이 권한은
+      <strong>이 앱이 만든 앱 전용 숨김 폴더</strong>에만 접근합니다.</li>
+  <li>사용자의 다른 Google Drive 파일은 <strong>읽지도 쓰지도 않습니다.</strong></li>
+  <li>백업 파일은 <strong>사용자 본인의 Drive</strong>에 저장되며, 개발자는 접근할 수 없습니다.
+      개발자 서버로 전송되지 않습니다.</li>
+  <li>연결은 앱 설정에서 <strong>언제든 해제</strong>할 수 있습니다.</li>
+  <li>연결하지 않아도 앱의 <strong>모든 기능을 사용할 수 있습니다.</strong></li>
 </ol>
-<h2 id="lang-1">한국어</h2>
-<div class="lead"><p><strong>MoodMeleon은 개발자 서버를 운영하지 않습니다. 감정 기록·메모 등 일기 내용은 기기 밖으로 나가지 않으며, 앱 개선을 위한 익명 사용 통계만 수집합니다.</strong></p></div>
-<ol>
-<li><strong>감정 기록</strong> — 감정 색·메모·그림 등 모든 기록은 <strong>기기 안에만 저장</strong>되며 개발자를 포함한 외부로 전송되지 않습니다.</li>
-<li><strong>백업(선택)</strong> — 이용자가 직접 Google 계정을 연결하면 기록이 <strong>이용자 본인의 Google Drive 전용 공간(appDataFolder)</strong>에 백업됩니다. 이 공간은 이용자 본인과 이 앱만 접근할 수 있으며, 개발자는 접근할 수 없습니다. Google 로그인·저장은 Google 개인정보처리방침의 적용을 받습니다. 연결은 설정에서 언제든 해제할 수 있습니다.</li>
-<li><strong>앱 사용 통계</strong> — 서비스 개선을 위해 Google Firebase Analytics·Crashlytics가 익명화된 사용 통계(화면·버튼 이용, 기기 모델, 앱 버전)와 충돌 로그를 수집합니다. 감정 기록·메모 내용은 포함되지 않습니다. 이 데이터는 Google LLC(미국 등 국외)로 이전·보관됩니다. — 국외 이전 항목: 이전받는 자 Google LLC, 목적 앱 품질 분석, 항목 위 기재, 보유기간 최대 14개월.</li>
-<li><strong>결제</strong> — 앱 내 &#x27;개발자 응원하기&#x27; 결제는 Apple App Store가 처리하며, 개발자는 결제 수단 정보에 접근할 수 없습니다.</li>
-<li>본 앱은 아동을 대상으로 하지 않으며, 광고·추적 SDK를 사용하지 않습니다.</li>
-<li>방침이 변경되면 이 페이지에 고지합니다.</li>
-</ol>
-<h2 id="lang-2">日本語</h2>
-<div class="lead"><p><strong>MoodMeleon は開発者サーバーを運用していません。日記の内容が端末外に送信されることはなく、収集するのはアプリ改善のための匿名の利用統計のみです。</strong></p></div>
-<ol>
-<li><strong>気分の記録</strong> — 気分の色・メモ・絵などすべての記録は<strong>端末内にのみ保存</strong>され、開発者を含む外部へ送信されることはありません。</li>
-<li><strong>バックアップ(任意)</strong> — 利用者が自分の Google アカウントを接続した場合、記録は<strong>利用者本人の Google Drive 専用領域(appDataFolder)</strong>にバックアップされます。この領域には本人とこのアプリのみがアクセスでき、開発者はアクセスできません。Google ログインと保存には Google のプライバシーポリシーが適用されます。接続は設定からいつでも解除できます。</li>
-<li><strong>利用統計</strong> — サービス改善のため、Google Firebase Analytics・Crashlytics が匿名化された利用統計(画面・ボタンの利用、端末モデル、アプリバージョン)とクラッシュログを収集します。気分の記録やメモの内容は含まれません。 データは Google LLC(米国等)に移転・保管されます。保持期間は最長14か月です。</li>
-<li><strong>決済</strong> — アプリ内の「開発者を応援」の決済は Apple App Store が処理し、開発者は決済情報にアクセスできません。</li>
-<li>本アプリは児童を対象とせず、広告・トラッキングSDKを使用しません。</li>
-<li>本ポリシーを変更する場合は本ページで告知します。</li>
-</ol>
-<h2 id="lang-3">繁體中文</h2>
-<div class="lead"><p><strong>MoodMeleon 未運作任何開發者伺服器。您的日記內容不會離開裝置，僅收集用於改善應用程式的匿名使用統計。</strong></p></div>
-<ol>
-<li><strong>心情紀錄</strong> — 心情顏色、備註、圖畫等所有紀錄<strong>僅儲存於您的裝置</strong>，絕不會傳送給開發者或第三方。</li>
-<li><strong>備份（選用）</strong> — 若您連結自己的 Google 帳戶，紀錄會備份至<strong>您本人的 Google 雲端硬碟應用程式專用資料夾</strong>。該空間僅有您本人與本應用程式可以存取，開發者無法存取。Google 登入與儲存適用 Google 的隱私權政策。您可隨時在設定中解除連結。</li>
-<li><strong>應用程式使用統計</strong> — 為改善服務，Google Firebase Analytics 與 Crashlytics 會收集匿名化的使用統計（畫面與按鈕的使用情況、裝置型號、應用程式版本）以及當機紀錄。其中不包含您的心情紀錄或備註內容。 資料會傳輸並儲存於 Google LLC（美國等國家），保存期限最長 14 個月。</li>
-<li><strong>付款</strong> — 應用程式內「支持開發者」的購買由 Apple App Store 處理，開發者無法存取您的付款資訊。</li>
-<li>本應用程式不以兒童為對象，且不使用廣告或追蹤 SDK。</li>
-<li>本政策若有變更，將於本頁公告。</li>
-</ol>
-<h2 id="lang-4">Español</h2>
-<div class="lead"><p><strong>MoodMeleon no opera ningún servidor propio. El contenido de su diario nunca sale de su dispositivo; solo se recopilan estadísticas de uso anónimas para mejorar la aplicación.</strong></p></div>
-<ol>
-<li><strong>Registros de ánimo</strong> — Todos los registros (colores de ánimo, notas, dibujos) se <strong>almacenan únicamente en su dispositivo</strong> y nunca se transmiten al desarrollador ni a terceros.</li>
-<li><strong>Copia de seguridad (opcional)</strong> — Si conecta su cuenta de Google, sus registros se respaldan en <strong>la carpeta de datos de aplicación de su propio Google Drive</strong>, accesible solo para usted y esta aplicación, nunca para el desarrollador. El inicio de sesión y el almacenamiento de Google se rigen por la política de privacidad de Google. Puede desconectarla en cualquier momento en Ajustes.</li>
-<li><strong>Estadísticas de uso</strong> — Google Firebase Analytics y Crashlytics recopilan estadísticas de uso anonimizadas (pantallas, botones, modelo de dispositivo, versión de la app) y registros de fallos para mejorar la aplicación. Sus registros de ánimo y notas nunca se incluyen. Los datos se transfieren y almacenan en Google LLC (EE. UU. y otros países); conservación hasta 14 meses.</li>
-<li><strong>Pagos</strong> — La compra opcional «Apoyar al desarrollador» se procesa a través de Apple App Store; el desarrollador no puede acceder a sus datos de pago.</li>
-<li>Esta aplicación no está dirigida a menores y no contiene publicidad ni SDK de seguimiento.</li>
-<li>Cualquier cambio en esta política se anunciará en esta página.</li>
-</ol>
-<h2 id="lang-5">Français</h2>
-<div class="lead"><p><strong>MoodMeleon n&#x27;exploite aucun serveur du développeur. Le contenu de votre journal ne quitte jamais votre appareil ; seules des statistiques d&#x27;utilisation anonymes sont collectées pour améliorer l&#x27;application.</strong></p></div>
-<ol>
-<li><strong>Enregistrements d&#x27;humeur</strong> — Tous les enregistrements (couleurs d&#x27;humeur, notes, dessins) sont <strong>stockés uniquement sur votre appareil</strong> et ne sont jamais transmis au développeur ni à des tiers.</li>
-<li><strong>Sauvegarde (facultative)</strong> — Si vous connectez votre compte Google, vos enregistrements sont sauvegardés dans <strong>le dossier de données d&#x27;application de votre propre Google Drive</strong>, accessible uniquement à vous et à cette application, jamais au développeur. La connexion et le stockage Google sont régis par la politique de confidentialité de Google. Vous pouvez vous déconnecter à tout moment dans les Réglages.</li>
-<li><strong>Statistiques d&#x27;utilisation</strong> — Google Firebase Analytics et Crashlytics collectent des statistiques d&#x27;utilisation anonymisées (écrans, boutons, modèle d&#x27;appareil, version de l&#x27;application) et des rapports de plantage afin d&#x27;améliorer l&#x27;application. Vos enregistrements d&#x27;humeur et vos notes n&#x27;y figurent jamais. Les données sont transférées et stockées par Google LLC (États-Unis et autres pays) ; conservation jusqu&#x27;à 14 mois.</li>
-<li><strong>Paiements</strong> — L&#x27;achat facultatif « Soutenir le développeur » est traité par l&#x27;App Store d&#x27;Apple ; le développeur n&#x27;a pas accès à vos informations de paiement.</li>
-<li>Cette application ne s&#x27;adresse pas aux enfants et ne contient ni publicité ni SDK de suivi.</li>
-<li>Toute modification de cette politique sera annoncée sur cette page.</li>
-</ol>
-<h2 id="lang-6">Deutsch</h2>
-<div class="lead"><p><strong>MoodMeleon betreibt keinen Entwickler-Server. Ihre Tagebuchinhalte verlassen Ihr Gerät nie; es werden lediglich anonyme Nutzungsstatistiken zur Verbesserung der App erhoben.</strong></p></div>
-<ol>
-<li><strong>Stimmungsaufzeichnungen</strong> — Alle Einträge (Stimmungsfarben, Notizen, Zeichnungen) werden <strong>ausschließlich auf Ihrem Gerät gespeichert</strong> und niemals an den Entwickler oder Dritte übertragen.</li>
-<li><strong>Sicherung (optional)</strong> — Wenn Sie Ihr Google-Konto verbinden, werden Ihre Einträge im <strong>App-Datenordner Ihres eigenen Google Drive</strong> gesichert, auf den nur Sie und diese App zugreifen können — niemals der Entwickler. Für Google-Anmeldung und -Speicherung gilt die Datenschutzrichtlinie von Google. Sie können die Verbindung jederzeit in den Einstellungen trennen.</li>
-<li><strong>Nutzungsstatistiken</strong> — Google Firebase Analytics und Crashlytics erfassen anonymisierte Nutzungsstatistiken (Bildschirme, Schaltflächen, Gerätemodell, App-Version) sowie Absturzberichte zur Verbesserung der App. Ihre Stimmungsaufzeichnungen und Notizen sind darin nie enthalten. Die Daten werden an Google LLC (USA und andere Länder) übertragen und dort gespeichert; Aufbewahrung bis zu 14 Monate.</li>
-<li><strong>Zahlungen</strong> — Der optionale Kauf „Entwickler unterstützen&quot; wird vom Apple App Store abgewickelt; der Entwickler hat keinen Zugriff auf Ihre Zahlungsdaten.</li>
-<li>Diese App richtet sich nicht an Kinder und enthält weder Werbung noch Tracking-SDKs.</li>
-<li>Änderungen dieser Richtlinie werden auf dieser Seite bekannt gegeben.</li>
-</ol>
-<h2 id="lang-7">हिन्दी</h2>
-<div class="lead"><p><strong>MoodMeleon कोई डेवलपर सर्वर नहीं चलाता। आपकी डायरी की सामग्री कभी आपके डिवाइस से बाहर नहीं जाती; ऐप को बेहतर बनाने के लिए केवल गुमनाम उपयोग आँकड़े एकत्र किए जाते हैं।</strong></p></div>
-<ol>
-<li><strong>मूड रिकॉर्ड</strong> — सभी रिकॉर्ड (मूड के रंग, नोट्स, चित्र) <strong>केवल आपके डिवाइस पर संग्रहीत</strong> होते हैं और कभी भी डेवलपर या तीसरे पक्ष को नहीं भेजे जाते।</li>
-<li><strong>बैकअप (वैकल्पिक)</strong> — यदि आप अपना Google खाता जोड़ते हैं, तो आपके रिकॉर्ड <strong>आपके अपने Google Drive के ऐप-डेटा फ़ोल्डर</strong> में बैकअप होते हैं, जहाँ केवल आप और यह ऐप पहुँच सकते हैं — डेवलपर कभी नहीं। Google साइन-इन और भंडारण पर Google की गोपनीयता नीति लागू होती है। आप सेटिंग्स में कभी भी संपर्क हटा सकते हैं।</li>
-<li><strong>उपयोग आँकड़े</strong> — ऐप को बेहतर बनाने के लिए Google Firebase Analytics और Crashlytics गुमनाम उपयोग आँकड़े (स्क्रीन, बटन, डिवाइस मॉडल, ऐप संस्करण) और क्रैश लॉग एकत्र करते हैं। आपके मूड रिकॉर्ड और नोट्स इसमें कभी शामिल नहीं होते। डेटा Google LLC (अमेरिका और अन्य देश) को स्थानांतरित और वहाँ संग्रहीत किया जाता है; अधिकतम 14 महीने तक रखा जाता है।</li>
-<li><strong>भुगतान</strong> — ऐप में «डेवलपर को सहयोग» की वैकल्पिक खरीद Apple App Store द्वारा संसाधित की जाती है; डेवलपर आपकी भुगतान जानकारी तक नहीं पहुँच सकता।</li>
-<li>यह ऐप बच्चों के लिए लक्षित नहीं है और इसमें कोई विज्ञापन या ट्रैकिंग SDK नहीं है।</li>
-<li>इस नीति में कोई भी बदलाव इसी पृष्ठ पर सूचित किया जाएगा।</li>
-</ol>
+<p>MoodMeleon offers optional Google Drive backup. It works only if the user explicitly
+connects their own Google account. The app requests a single scope,
+<strong>drive.appdata</strong>, which grants access <strong>only to a hidden,
+app-specific folder</strong> created by this app. The app never reads or writes any other
+file in the user's Drive. Backups are stored in the user's own Drive; the developer has no
+access and nothing is sent to a developer server. Users can disconnect at any time in
+Settings, and every feature of the app works without connecting.</p>
+
+<h2>개인정보 / Privacy</h2>
+<p>MoodMeleon은(는) 개발자 서버를 운영하지 않습니다. 자세한 내용은 아래를 참고하세요.</p>
+<div class="btnrow">
+  <a href="privacy/">개인정보 처리방침 / Privacy Policy</a>
+  <a href="mailto:supersons.apps@gmail.com">문의 / Contact</a>
+</div>
+
 <footer>
-  이 페이지는 App Store에 등록된 개인정보 처리방침입니다.<br>
-  문의: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  문의 / Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
 </footer>
 </div>
 </body>
