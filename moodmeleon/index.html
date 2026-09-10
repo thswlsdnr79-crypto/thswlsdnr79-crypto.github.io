@@ -66,13 +66,22 @@ a:hover{text-decoration:underline}
 footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
        color:var(--muted);font-size:.85rem}
 </style>
+<style>
+h1{display:flex;align-items:center;gap:11px}
+.hicon{width:36px;height:36px;flex:0 0 auto;border-radius:8px;border:1px solid var(--line)}
+</style>
+<style>
+[dir="rtl"]{text-align:right}
+[dir="rtl"] ol{padding-left:0;padding-right:1.35em}
+[dir="rtl"] .btnrow a{margin:0 0 8px 8px}
+</style>
 </head>
 <body>
 <div class="wrap">
-<h1>MoodMeleon</h1>
+<h1><img class="hicon" src="../icons/moodmeleon.png" width="36" height="36" alt="" loading="lazy">MoodMeleon</h1>
 <p class="tag">Track your daily mood as colors</p>
 <p class="purpose"><strong>MoodMeleon</strong> is an iOS app. Pick a color for how you feel, and it fills one cell of your calendar. Over a month you can see at a glance how your moods have flowed. You can also leave notes and drawings.</p><p class="purpose">MoodMeleon uses Google Drive solely to back up the user's own diary data to a hidden, app-specific folder in their personal Drive, so the data can be restored after changing devices. It requests only the <strong>drive.appdata</strong> scope and never accesses any other file in the user's Drive.</p>
-<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a></nav>
+<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">繁體中文</a><a href="#lang-4">Español</a><a href="#lang-5">Français</a><a href="#lang-6">Deutsch</a><a href="#lang-7">العربية</a></nav>
 <h2 id="lang-0" lang="en">English</h2>
 <p class="tag" lang="en">Track your daily mood as colors</p>
 <h3>About</h3>
@@ -234,6 +243,31 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 <h3>Datenschutz</h3>
 <p lang="de">Diese App betreibt keinen Entwickler-Server. Einzelheiten in der Datenschutzrichtlinie.</p>
 <div class="btnrow"><a href="privacy/#lang-6">Datenschutzrichtlinie</a><a href="terms/#lang-6">Nutzungsbedingungen</a><a href="mailto:supersons.apps@gmail.com">Kontakt</a></div>
+<h2 id="lang-7" lang="ar" dir="rtl">العربية</h2>
+<div lang="ar" dir="rtl">
+<p class="tag" lang="ar">تابع مزاجك اليومي بالألوان</p>
+<h3>نبذة</h3>
+<p lang="ar">اختر لونًا يعبّر عن شعورك، فيملأ خانة واحدة في تقويمك. وعلى مدى شهر ترى بنظرة واحدة كيف تدفّقت حالتك المزاجية. ويمكنك أيضًا ترك ملاحظات ورسوم.</p>
+<h3>المزايا</h3>
+<ul class="feat" lang="ar">
+  <li><span class="t">ألوان المزاج</span><span class="d">اختر من اثني عشر لونًا للمزاج فيمتلئ تقويمك.</span></li>
+  <li><span class="t">فن البكسل</span><span class="d">املأ القوالب الجاهزة بألوان المزاج لتكمل صورة.</span></li>
+  <li><span class="t">الإحصاءات</span><span class="d">اعرف أي الحالات المزاجية سادت شهرك أو عامك.</span></li>
+  <li><span class="t">النسخ الاحتياطي إلى Google Drive (اختياري)</span><span class="d">انسخ بياناتك إلى مجلد خاص بالتطبيق في Google Drive الخاص بك لتستعيدها بعد تغيير الجهاز. أنت وهذا التطبيق وحدكما من يصل إلى ذلك المجلد &mdash; والمطوّر لا يستطيع.</span></li>
+</ul>
+<h3>عن النسخ الاحتياطي إلى Google Drive</h3>
+<p lang="ar">يوفّر MoodMeleon النسخ الاحتياطي إلى Google Drive كميزة اختيارية. ولا يعمل إلا إذا ربطت حسابك في Google بنفسك.</p>
+<ol lang="ar">
+  <li>يطلب التطبيق نطاقًا واحدًا: <strong>drive.appdata</strong>. وهو يمنح الوصول <strong>إلى مجلد مخفي خاص بهذا التطبيق</strong> وحده.</li>
+  <li>التطبيق <strong>لا يقرأ ولا يكتب أي ملف آخر</strong> في Drive الخاص بك.</li>
+  <li>تُخزَّن النسخ الاحتياطية في <strong>Drive الخاص بك</strong>. لا يملك المطوّر أي وصول إليها، ولا يُرسل أي شيء إلى خادم للمطوّر.</li>
+  <li>يمكنك <strong>إلغاء الربط في أي وقت</strong> من الإعدادات.</li>
+  <li><strong>كل الميزات تعمل</strong> دون ربط أي حساب.</li>
+</ol>
+<h3>الخصوصية</h3>
+<p lang="ar">لا يشغّل هذا التطبيق أي خادم للمطوّر. راجع سياسة الخصوصية أدناه للتفاصيل.</p>
+<div class="btnrow"><a href="privacy/#lang-7">سياسة الخصوصية</a><a href="terms/#lang-7">شروط الخدمة</a><a href="mailto:supersons.apps@gmail.com">اتصل بنا</a></div>
+</div>
 <p class="allapps"><a href="../">All apps</a></p>
 <footer>
   Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
