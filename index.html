@@ -56,6 +56,23 @@ a:hover{text-decoration:underline}
 .btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
        color:var(--muted);font-size:.85rem}
+/* 앱 목록 카드에 App Store 링크를 함께 둔다. <a> 안에 <a>는 HTML에서 허용되지
+   않으므로 카드 테두리는 <li>가 맡고, 제목 링크는 테두리 없는 블록으로 되돌린다. */
+.applist li{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 20px}
+.applist li:hover{border-color:var(--accent)}
+.applist a{display:block;padding:0;border:0;border-radius:0;background:none}
+.applist .dl,.applist .soon{display:inline-block;margin-top:10px;font-size:.85rem}
+.applist .dl{color:var(--accent)}
+.applist .dl:hover{text-decoration:underline}
+.applist .soon{color:var(--muted)}
+.applist .head{display:flex;align-items:center;gap:13px}
+.applist .icon{width:48px;height:48px;flex:0 0 auto;border-radius:11px;
+               border:1px solid var(--line);background:var(--bg)}
+.applist .txt{min-width:0}
+.applist .name,.applist .desc{display:block}
+/* 아이콘 폭(48)+간격(13)만큼 들여써서 제목과 왼쪽을 맞춘다 */
+.applist .dl,.applist .soon{margin-left:61px}
+@media (max-width:380px){.applist .dl,.applist .soon{margin-left:0}}
 </style>
 </head>
 <body>
@@ -63,16 +80,33 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 <h1>Apps</h1>
 <p class="tag">Independent iOS apps.</p>
 <ul class="applist">
-  <li><a href="moodmeleon/"><div class="name">MoodMeleon</div><div class="desc">Track your daily mood as colors</div></a></li>
-  <li><a href="turtletiles/"><div class="name">TurtleTiles</div><div class="desc">Slide &amp; jigsaw puzzles from your own photos</div></a></li>
-  <li><a href="snailway/"><div class="name">Snailway</div><div class="desc">Your walks, drawn as a picture</div></a></li>
-  <li><a href="geckoimage/"><div class="name">Gecko Image</div><div class="desc">Take the same shot, from the same spot</div></a></li>
-  <li><a href="octopick/"><div class="name">OctoPick</div><div class="desc">Draws, orders and team splits</div></a></li>
+  <li><a class="head" href="moodmeleon/">
+      <img class="icon" src="icons/moodmeleon.png" width="48" height="48" alt="" loading="lazy">
+      <span class="txt"><span class="name">MoodMeleon</span><span class="desc">Track your daily mood as colors</span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801554712">Download on the App Store</a></li>
+  <li><a class="head" href="turtletiles/">
+      <img class="icon" src="icons/turtletiles.png" width="48" height="48" alt="" loading="lazy">
+      <span class="txt"><span class="name">TurtleTiles</span><span class="desc">Slide &amp; jigsaw puzzles from your own photos</span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801554529">Download on the App Store</a></li>
+  <li><a class="head" href="snailway/">
+      <img class="icon" src="icons/snailway.png" width="48" height="48" alt="" loading="lazy">
+      <span class="txt"><span class="name">Snailway</span><span class="desc">Your walks, drawn as a picture</span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801550943">Download on the App Store</a></li>
+  <li><a class="head" href="geckoimage/">
+      <img class="icon" src="icons/geckoimage.png" width="48" height="48" alt="" loading="lazy">
+      <span class="txt"><span class="name">Gecko Image</span><span class="desc">Take the same shot, from the same spot</span></span></a>
+    <span class="soon">Coming soon to the App Store</span></li>
+  <li><a class="head" href="octopick/">
+      <img class="icon" src="icons/octopick.png" width="48" height="48" alt="" loading="lazy">
+      <span class="txt"><span class="name">OctoPick</span><span class="desc">Draws, orders and team splits</span></span></a>
+    <span class="soon">Coming soon to the App Store</span></li>
 </ul>
 <h2>Contact</h2>
-<p><a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a></p>
+<p><a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a><br>
+Instagram: <a href="https://www.instagram.com/gwangmyeongappdev/">@gwangmyeongappdev</a></p>
 <footer>
   Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+  &middot; <a href="https://www.instagram.com/gwangmyeongappdev/">@gwangmyeongappdev</a>
 </footer>
 </div>
 </body>
