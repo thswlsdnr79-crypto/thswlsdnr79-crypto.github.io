@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BallPaint</title>
+<style>
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--card:#fafafa;--accent:#0a84ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111113;--fg:#ececf1;--muted:#9a9aa2;--line:#2c2c30;--card:#1a1a1d;--accent:#4da3ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",
+              "Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:48px 20px 96px}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px;letter-spacing:-0.02em}
+h2{font-size:1.15rem;margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line);
+   letter-spacing:-0.01em;scroll-margin-top:16px}
+h2:first-of-type{border-top:0;padding-top:0;margin-top:28px}
+h3{font-size:.95rem;margin:24px 0 6px;color:var(--muted);font-weight:600}
+.tag{color:var(--muted);font-size:1.02rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.875rem;margin:0 0 8px}
+.meta a{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+ol{padding-left:1.35em;margin:0}
+li{margin:12px 0}
+p{margin:14px 0}
+strong{font-weight:600}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:20px 0}
+.lead p{margin:0}
+.back{display:inline-block;margin-bottom:28px;font-size:.9rem;color:var(--muted)}
+.applist{list-style:none;padding:0;margin:28px 0 0}
+.applist li{margin:0 0 12px}
+.applist a{display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;
+           background:var(--card);color:inherit}
+.applist a:hover{border-color:var(--accent);text-decoration:none}
+.applist .name{font-weight:600;font-size:1.05rem}
+.applist .desc{color:var(--muted);font-size:.9rem;margin-top:2px}
+.feat{list-style:none;padding:0;margin:14px 0 0}
+.feat li{border:1px solid var(--line);border-radius:12px;background:var(--card);
+         padding:14px 16px;margin:0 0 8px}
+.feat .t{font-weight:600;display:block;margin-bottom:2px}
+.feat .d{color:var(--muted);font-size:.94rem}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+.langs a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+         background:var(--card);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.langs a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.purpose{font-size:1rem;margin:14px 0}
+.allapps{margin-top:56px;font-size:.9rem}
+.btnrow{margin:18px 0 0}
+.btnrow a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:10px;
+          background:var(--card);margin:0 8px 8px 0;color:inherit;font-size:.94rem}
+.btnrow a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+       color:var(--muted);font-size:.85rem}
+</style>
+<style>
+[dir="rtl"]{text-align:right}
+[dir="rtl"] ol{padding-left:0;padding-right:1.35em}
+[dir="rtl"] .btnrow a{margin:0 0 8px 8px}
+</style>
+<style>
+h1{display:flex;align-items:center;gap:11px}
+.hicon{width:36px;height:36px;flex:0 0 auto;border-radius:8px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../">&larr; All apps</a>
+<h1><img class="hicon" src="../icons/ballpaint.png" width="36" height="36" alt="" loading="lazy">BallPaint</h1>
+<p class="tag">Mistakes become brushstrokes</p>
+<p class="purpose"><strong>BallPaint</strong> is an iPhone puzzle game. Tilt the phone to roll a ball full of paint; the floor is painted where the ball passes, and clearing a stage saves that trail as a picture. 50 stages across six chapters, a map editor and a gallery of everything you have painted. No ads, no account.</p>
+<nav class="langs"><a href="#lang-0">English</a><a href="#lang-1">한국어</a><a href="#lang-2">日本語</a><a href="#lang-3">Español (LA)</a></nav>
+<h2 id="lang-0" lang="en">English</h2>
+<p class="tag" lang="en">Mistakes become brushstrokes</p>
+<h3>About</h3>
+<p lang="en">Tilt your iPhone and the ball rolls; wherever it rolls, paint stays behind. The moment you clear a stage that trail is saved as a painting &mdash; roll the same stage a different way and you get a completely different picture. Tilt controls need the motion sensor, so BallPaint is iPhone only and stays in portrait.</p>
+<h3>Features</h3>
+<ul class="feat" lang="en">
+  <li><span class="t">Tilt to roll</span><span class="d">The path you take is the painting. Every stage you clear keeps the trail you left behind.</span></li>
+  <li><span class="t">Mistakes paint too</span><span class="d">Spikes make the paint splatter, bumpers leave a smear. The penalty is the brushstroke.</span></li>
+  <li><span class="t">Color is the key</span><span class="d">A color gate opens only for its own color, and each color has its own paint supply to spend.</span></li>
+  <li><span class="t">Size is a state</span><span class="d">Shrink and grow pickups change the ball. Small slips through tight gaps; large smashes cracked walls.</span></li>
+  <li><span class="t">50 stages, six chapters</span><span class="d">Basics, color, size, cost, structure and mastery &mdash; rated up to five stars on your time and how little paint you waste.</span></li>
+  <li><span class="t">Gallery</span><span class="d">Every cleared stage keeps its painting, and you can save any of them to Photos.</span></li>
+  <li><span class="t">Map editor</span><span class="d">All thirteen elements are available from the start, and a built-in solver refuses to save a map that cannot be cleared.</span></li>
+</ul>
+<h3>Privacy</h3>
+<p lang="en">Your paintings, level records and custom maps stay on your device. The app sends only crash reports and anonymous screen/button counts.</p>
+<div class="btnrow"><a href="privacy/#lang-0">Privacy Policy</a><a href="terms/#lang-0">Terms of Use</a><a href="mailto:supersons.apps@gmail.com">Contact</a></div>
+<h2 id="lang-1" lang="ko">한국어</h2>
+<p class="tag" lang="ko">실수도 그림이 되는 페인트 퍼즐</p>
+<h3>소개</h3>
+<p lang="ko">iPhone을 기울이면 공이 구르고, 구른 자리에는 페인트가 남습니다. 스테이지를 깨는 순간 그 궤적이 한 장의 그림으로 저장됩니다 &mdash; 같은 스테이지라도 어떻게 굴렸느냐에 따라 전혀 다른 그림이 나옵니다. 기울기 조작에는 모션 센서가 필요해 iPhone 전용이며 화면은 세로로 고정됩니다.</p>
+<h3>주요 기능</h3>
+<ul class="feat" lang="ko">
+  <li><span class="t">기울여 굴리기</span><span class="d">지나온 자리가 곧 그림입니다. 스테이지를 깰 때마다 그 궤적이 남습니다.</span></li>
+  <li><span class="t">실수도 그림이 됩니다</span><span class="d">가시에 찔리면 페인트가 튀고, 범퍼에 부딪히면 얼룩이 남습니다. 페널티가 곧 붓질입니다.</span></li>
+  <li><span class="t">색이 열쇠입니다</span><span class="d">색 관문은 같은 색일 때만 열립니다. 색마다 페인트가 따로 있어서 어느 색을 어디에 쓸지가 곧 퍼즐입니다.</span></li>
+  <li><span class="t">크기가 상태입니다</span><span class="d">축소·확대 아이템으로 공의 크기가 바뀝니다. 작으면 좁은 틈을 지나고, 크면 금 간 벽을 부숩니다.</span></li>
+  <li><span class="t">6개 챕터 50개 스테이지</span><span class="d">기본 · 색 · 크기 · 소모 · 구조 · 마스터리. 걸린 시간과 페인트 효율로 별 5개까지 매겨집니다.</span></li>
+  <li><span class="t">갤러리</span><span class="d">깬 스테이지의 그림이 모입니다. 원하는 그림은 사진 앨범으로 저장할 수 있습니다.</span></li>
+  <li><span class="t">맵 에디터</span><span class="d">13가지 요소를 처음부터 전부 씁니다. 클리어할 수 없는 맵은 무엇이 문제인지 알려 주고 저장을 막습니다.</span></li>
+</ul>
+<h3>개인정보</h3>
+<p lang="ko">그림과 기록, 직접 만든 맵은 기기 안에 남습니다. 앱이 전송하는 것은 오류 기록과 익명 화면·버튼 집계뿐입니다.</p>
+<div class="btnrow"><a href="privacy/#lang-1">개인정보 처리방침</a><a href="terms/#lang-1">이용약관</a><a href="mailto:supersons.apps@gmail.com">문의</a></div>
+<h2 id="lang-2" lang="ja">日本語</h2>
+<p class="tag" lang="ja">ミスも絵になるペンキパズル</p>
+<h3>概要</h3>
+<p lang="ja">iPhoneを傾けると玉が転がり、転がった跡にはペンキが残ります。ステージをクリアした瞬間、その軌跡が一枚の絵として保存されます &mdash; 同じステージでも、どう転がしたかで全く違う絵になります。傾け操作にはモーションセンサーが必要なため、iPhone専用・縦画面固定です。</p>
+<h3>主な機能</h3>
+<ul class="feat" lang="ja">
+  <li><span class="t">傾けて転がす</span><span class="d">通った跡がそのまま絵になります。クリアするたびにその軌跡が残ります。</span></li>
+  <li><span class="t">失敗も絵になります</span><span class="d">トゲに刺されればペンキが飛び散り、バンパーに当たれば染みが残ります。ペナルティがそのまま筆跡です。</span></li>
+  <li><span class="t">色が鍵です</span><span class="d">色のゲートは同じ色のときだけ開きます。色ごとにペンキの残量が別なので、どの色をどこで使うかがパズルになります。</span></li>
+  <li><span class="t">大きさが状態です</span><span class="d">縮小・拡大アイテムで玉の大きさが変わります。小さければ狭い隙間を通り、大きければひび割れた壁を壊せます。</span></li>
+  <li><span class="t">6章・全50ステージ</span><span class="d">基本 / 色 / 大きさ / 消費 / 構造 / マスタリー。かかった時間とペンキの効率で星5つまで決まります。</span></li>
+  <li><span class="t">ギャラリー</span><span class="d">クリアしたステージの絵が集まります。写真アルバムにも保存できます。</span></li>
+  <li><span class="t">マップエディタ</span><span class="d">13の要素を最初から全部使えます。クリア不可能なマップは理由を示して保存を止めます。</span></li>
+</ul>
+<h3>プライバシー</h3>
+<p lang="ja">絵と記録、自作マップは端末内に残ります。アプリが送信するのはクラッシュレポートと匿名の画面・ボタン集計だけです。</p>
+<div class="btnrow"><a href="privacy/#lang-2">プライバシーポリシー</a><a href="terms/#lang-2">利用規約</a><a href="mailto:supersons.apps@gmail.com">お問い合わせ</a></div>
+<h2 id="lang-3" lang="es-419">Español (LA)</h2>
+<p class="tag" lang="es-419">Hasta tus errores pintan</p>
+<h3>Acerca de</h3>
+<p lang="es-419">Inclinas tu iPhone y la bola rueda; por donde rueda, queda pintura. En cuanto superas una etapa, ese rastro se guarda como un cuadro &mdash; juega la misma etapa de otra forma y te llevas un cuadro completamente distinto. Los controles por inclinación necesitan el sensor de movimiento, así que la app es solo para iPhone y se mantiene en vertical.</p>
+<h3>Funciones</h3>
+<ul class="feat" lang="es-419">
+  <li><span class="t">Inclina para rodar</span><span class="d">El camino que recorres es el cuadro. Cada etapa superada conserva el rastro que dejaste.</span></li>
+  <li><span class="t">Los errores también pintan</span><span class="d">Los pinchos hacen saltar la pintura y los topes dejan una mancha. El castigo es la pincelada.</span></li>
+  <li><span class="t">El color es la llave</span><span class="d">Una compuerta de color solo se abre para su propio color, y cada color tiene su propia reserva de pintura.</span></li>
+  <li><span class="t">El tamaño es un estado</span><span class="d">Los objetos de encoger y crecer cambian la bola. Pequeña pasa por huecos estrechos; grande rompe los muros agrietados.</span></li>
+  <li><span class="t">50 etapas en 6 capítulos</span><span class="d">Bases, color, tamaño, gasto, estructura y maestría, con hasta cinco estrellas según tu tiempo y la pintura que no desperdicias.</span></li>
+  <li><span class="t">Galería</span><span class="d">Cada etapa superada conserva su cuadro y puedes guardar el que quieras en Fotos.</span></li>
+  <li><span class="t">Editor de mapas</span><span class="d">Los trece elementos están disponibles desde el principio, y una verificación automática no deja guardar un mapa imposible de superar.</span></li>
+</ul>
+<h3>Privacidad</h3>
+<p lang="es-419">Tus cuadros, tus registros y tus mapas se quedan en tu dispositivo. La app solo envía informes de fallos y conteos anónimos de pantallas y botones.</p>
+<div class="btnrow"><a href="privacy/#lang-3">Política de privacidad</a><a href="terms/#lang-3">Términos de uso</a><a href="mailto:supersons.apps@gmail.com">Contacto</a></div>
+<footer>
+  Contact: <a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a>
+</footer>
+</div>
+</body>
+</html>
