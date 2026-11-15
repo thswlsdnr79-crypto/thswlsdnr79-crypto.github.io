@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ui-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,43 +73,50 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 /* 아이콘 폭(48)+간격(13)만큼 들여써서 제목과 왼쪽을 맞춘다 */
 .applist .dl,.applist .soon{margin-left:61px}
 @media (max-width:380px){.applist .dl,.applist .soon{margin-left:0}}
+[data-ui-lang="en"] [data-lang="ko"],[data-ui-lang="ko"] [data-lang="en"]{display:none}
+.langswitch{display:flex;gap:8px;margin:20px 0 0}.langswitch button{padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--fg);font:inherit;font-size:.85rem;cursor:pointer}.langswitch button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Apps</h1>
-<p class="tag">Independent iOS apps.</p>
+<h1><span data-lang="en">Apps</span><span data-lang="ko">앱</span></h1>
+<p class="tag"><span data-lang="en">Independent iOS apps.</span><span data-lang="ko">일상을 위한 iOS 앱.</span></p>
+<nav class="langswitch" aria-label="Language / 언어"><button type="button" data-language="en" aria-pressed="true">English</button><button type="button" data-language="ko" aria-pressed="false">한국어</button></nav>
 <ul class="applist">
+  <li><a class="head" href="owlebook/">
+      <img class="icon" src="icons/owlebook.png" width="48" height="48" alt="">
+      <span class="txt"><span class="name">OwlEbook · 부엉이 이북</span><span class="desc"><span data-lang="en">Your text and comics, your way</span><span data-lang="ko">내 텍스트와 만화를 편하게 읽기</span></span></span></a>
+    <span class="soon"><span data-lang="en">Coming soon to the App Store</span><span data-lang="ko">App Store 출시 준비 중</span></span></li>
   <li><a class="head" href="moodmeleon/">
       <img class="icon" src="icons/moodmeleon.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">MoodMeleon</span><span class="desc">Track your daily mood as colors</span></span></a>
-    <a class="dl" href="https://apps.apple.com/app/id6801554712">Download on the App Store</a></li>
+      <span class="txt"><span class="name">MoodMeleon</span><span class="desc"><span data-lang="en">Track your daily mood as colors</span><span data-lang="ko">매일의 기분을 색으로 기록</span></span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801554712"><span data-lang="en">Download on the App Store</span><span data-lang="ko">App Store에서 다운로드</span></a></li>
   <li><a class="head" href="turtletiles/">
       <img class="icon" src="icons/turtletiles.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">TurtleTiles</span><span class="desc">Slide &amp; jigsaw puzzles from your own photos</span></span></a>
-    <a class="dl" href="https://apps.apple.com/app/id6801554529">Download on the App Store</a></li>
+      <span class="txt"><span class="name">TurtleTiles</span><span class="desc"><span data-lang="en">Slide &amp; jigsaw puzzles from your own photos</span><span data-lang="ko">내 사진으로 만드는 슬라이드·직소 퍼즐</span></span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801554529"><span data-lang="en">Download on the App Store</span><span data-lang="ko">App Store에서 다운로드</span></a></li>
   <li><a class="head" href="snailway/">
       <img class="icon" src="icons/snailway.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">Snailway</span><span class="desc">Your walks, drawn as a picture</span></span></a>
-    <a class="dl" href="https://apps.apple.com/app/id6801550943">Download on the App Store</a></li>
+      <span class="txt"><span class="name">Snailway</span><span class="desc"><span data-lang="en">Your walks, drawn as a picture</span><span data-lang="ko">산책을 그림으로 남기기</span></span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6801550943"><span data-lang="en">Download on the App Store</span><span data-lang="ko">App Store에서 다운로드</span></a></li>
   <li><a class="head" href="geckoimage/">
       <img class="icon" src="icons/geckoimage.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">Gecko Image</span><span class="desc">Take the same shot, from the same spot</span></span></a>
-    <a class="dl" href="https://apps.apple.com/app/id6807411418">Download on the App Store</a></li>
+      <span class="txt"><span class="name">Gecko Image</span><span class="desc"><span data-lang="en">Take the same shot, from the same spot</span><span data-lang="ko">같은 자리에서 같은 구도로 사진 찍기</span></span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6807411418"><span data-lang="en">Download on the App Store</span><span data-lang="ko">App Store에서 다운로드</span></a></li>
   <li><a class="head" href="octopick/">
       <img class="icon" src="icons/octopick.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">OctoPick</span><span class="desc">Draws, orders and team splits</span></span></a>
-    <span class="soon">Coming soon to the App Store</span></li>
+      <span class="txt"><span class="name">OctoPick</span><span class="desc"><span data-lang="en">Draws, orders and team splits</span><span data-lang="ko">추첨과 순서 정하기, 팀 나누기</span></span></span></a>
+    <span class="soon"><span data-lang="en">Coming soon to the App Store</span><span data-lang="ko">App Store 출시 준비 중</span></span></li>
   <li><a class="head" href="snorebear/">
       <img class="icon" src="icons/snorebear.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">SnoreBear</span><span class="desc">Record and listen to sounds from your night</span></span></a>
-    <span class="soon">Coming soon to the App Store</span></li>
+      <span class="txt"><span class="name">SnoreBear</span><span class="desc"><span data-lang="en">Record and listen to sounds from your night</span><span data-lang="ko">자는 동안 나는 소리 기록하고 듣기</span></span></span></a>
+    <a class="dl" href="https://apps.apple.com/app/id6812776909"><span data-lang="en">Download on the App Store</span><span data-lang="ko">App Store에서 다운로드</span></a></li>
   <li><a class="head" href="ballpaint/">
       <img class="icon" src="icons/ballpaint.png" width="48" height="48" alt="" loading="lazy">
-      <span class="txt"><span class="name">BallPaint</span><span class="desc">Mistakes become brushstrokes</span></span></a>
-    <span class="soon">Coming soon to the App Store</span></li>
+      <span class="txt"><span class="name">BallPaint</span><span class="desc"><span data-lang="en">Mistakes become brushstrokes</span><span data-lang="ko">실수가 붓질이 되는 그림</span></span></span></a>
+    <span class="soon"><span data-lang="en">Coming soon to the App Store</span><span data-lang="ko">App Store 출시 준비 중</span></span></li>
 </ul>
-<h2>Contact</h2>
+<h2><span data-lang="en">Contact</span><span data-lang="ko">문의</span></h2>
 <p><a href="mailto:supersons.apps@gmail.com">supersons.apps@gmail.com</a><br>
 Instagram: <a href="https://www.instagram.com/gwangmyeongappdev/">@gwangmyeongappdev</a></p>
 <footer>
@@ -117,5 +124,16 @@ Instagram: <a href="https://www.instagram.com/gwangmyeongappdev/">@gwangmyeongap
   &middot; <a href="https://www.instagram.com/gwangmyeongappdev/">@gwangmyeongappdev</a>
 </footer>
 </div>
+<script>
+(function(){
+  function setLanguage(language){
+    document.documentElement.dataset.uiLang=language;
+    document.documentElement.lang=language;
+    document.querySelectorAll('[data-language]').forEach(function(button){button.setAttribute('aria-pressed',String(button.dataset.language===language));});
+  }
+  document.querySelectorAll('[data-language]').forEach(function(button){button.addEventListener('click',function(){setLanguage(button.dataset.language);});});
+  if(navigator.language && navigator.language.toLowerCase().startsWith('ko')) setLanguage('ko');
+})();
+</script>
 </body>
 </html>
